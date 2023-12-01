@@ -1,0 +1,568 @@
+<div class="page-header">
+  <div class="page-title">
+    <h4>Supplier Report</h4>
+    <h6>Manage your Supplier Report</h6>
+  </div>
+</div>
+
+<!-- /product list -->
+<div class="card">
+  <div class="card-body">
+    <div class="tabs-set">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="purchase-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#purchase"
+            type="button"
+            role="tab"
+            aria-controls="purchase"
+            aria-selected="true"
+          >
+            Purchase
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="payment-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#payment"
+            type="button"
+            role="tab"
+            aria-controls="payment"
+            aria-selected="false"
+          >
+            Payment
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="return-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#return"
+            type="button"
+            role="tab"
+            aria-controls="return"
+            aria-selected="false"
+          >
+            Return
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="purchase"
+          role="tabpanel"
+          aria-labelledby="purchase-tab"
+        >
+          <div class="table-top">
+            <div class="search-set">
+              <div class="search-path">
+                <a
+                  (click)="showFilter = !showFilter"
+                  [class.setclose]="showFilter == true"
+                  class="btn btn-filter"
+                  id="filter_search"
+                >
+                  <img
+                    *ngIf="showFilter == false"
+                    src="assets/img/icons/filter.svg"
+                    alt="img"
+                  />
+                  <span
+                    ><img
+                      *ngIf="showFilter == true"
+                      src="assets/img/icons/filter.svg"
+                      alt="img"
+                  /></span>
+                </a>
+              </div>
+              <div class="search-input">
+                <a class="btn btn-searchset"
+                  ><img src="assets/img/icons/search-white.svg" alt="img"
+                /></a>
+                <div class="dataTables_filter">
+                  <label>
+                    <input
+                      [(ngModel)]="searchDataValue"
+                      (ngModelChange)="searchData(searchDataValue)"
+                      type="search"
+                      class="form-control"
+                      placeholder="Search..."
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="wordset">
+              <ul>
+                <li>
+                  <a
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="pdf"
+                    ><img src="assets/img/icons/pdf.svg" alt="img"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="excel"
+                    ><img src="assets/img/icons/excel.svg" alt="img"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="print"
+                    ><img src="assets/img/icons/printer.svg" alt="img"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /Filter -->
+          <div
+            class="card mb-0 border-0"
+            [ngClass]="{
+              'show-sub-menu': showFilter == true,
+              'hide-sub-menu': showFilter == false
+            }"
+          >
+            <div class="card-body pb-0">
+              <div class="row">
+                <div class="col-lg-2 col-sm-6 col-12">
+                  <div class="form-group">
+                    <div class="input-groupicon">
+                      <ngx-datepicker [(ngModel)]="date"></ngx-datepicker>
+                      <div class="addonset"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-sm-6 col-12">
+                  <div class="form-group">
+                    <div class="input-groupicon">
+                      <ngx-datepicker [(ngModel)]="date"></ngx-datepicker>
+                      <div class="addonset"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-1 col-sm-6 col-12 ms-auto">
+                  <div class="form-group">
+                    <a class="btn btn-filters ms-auto"
+                      ><img src="assets/img/icons/search-whites.svg" alt="img"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /Filter -->
+          <div class="table-responsive">
+            <table
+              (matSortChange)="sortPurchaseData($event)"
+              matSort
+              matSortActive="Sno"
+              matSortDirection="asc"
+              matSortDisableClear
+              class="table datanew"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    <label
+                      class="checkboxs"
+                      (click)="purchaseSelectAll(purchaseInitChecked)"
+                    >
+                      <input
+                        type="checkbox"
+                        [(ngModel)]="purchaseInitChecked"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </th>
+                  <th mat-sort-header="purchasedDate">purchased Date</th>
+                  <th mat-sort-header="Productname">Product Name</th>
+                  <th mat-sort-header="Purchasedamount">Purchased amount</th>
+                  <th mat-sort-header="purchasedQTY">purchased QTY</th>
+                  <th mat-sort-header="Paid">Paid</th>
+                  <th mat-sort-header="balance">balance</th>
+                  <th mat-sort-header="Status">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let report of purchaseData">
+                  <td>
+                    <label class="checkboxs">
+                      <input type="checkbox" [(ngModel)]="report.isSelected" />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </td>
+                  <td>{{ report.purchasedDate }}</td>
+                  <td class="productimgname">
+                    <a class="product-img">
+                      <img [src]="report.img" alt="product" />
+                    </a>
+                    <a href="javascript:void(0);">{{ report.Productname }}</a>
+                  </td>
+                  <td>{{ report.Purchasedamount }}</td>
+                  <td>{{ report.purchasedQTY }}</td>
+                  <td>{{ report.Paid }}</td>
+                  <td>{{ report.balance }}</td>
+                  <td>
+                    <span
+                      [ngClass]="{
+                        'bg-lightgrey': report.Status === 'Received'
+                      }"
+                      class="badges"
+                      >{{ report.Status }}</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+<custom-pagination></custom-pagination>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="payment" role="tabpanel">
+          <div class="table-top">
+            <div class="search-set">
+              <div class="search-path">
+                <a
+                  (click)="showFilters = !showFilters"
+                  [class.setclose]="showFilters == true"
+                  class="btn btn-filter"
+                  id="filter_search"
+                >
+                  <img
+                    *ngIf="showFilters == false"
+                    src="assets/img/icons/filter.svg"
+                    alt="img"
+                  />
+                  <span
+                    ><img
+                      *ngIf="showFilters == true"
+                      src="assets/img/icons/filter.svg"
+                      alt="img"
+                  /></span>
+                </a>
+              </div>
+              <div class="search-input">
+                <a class="btn btn-searchset"
+                  ><img src="assets/img/icons/search-white.svg" alt="img"
+                /></a>
+                <div class="dataTables_filter">
+                  <label>
+                    <input
+                      [(ngModel)]="searchDataValue"
+                      (ngModelChange)="searchData(searchDataValue)"
+                      type="search"
+                      class="form-control"
+                      placeholder="Search..."
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="wordset">
+              <ul>
+                <li>
+                  <a
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="pdf"
+                    ><img src="assets/img/icons/pdf.svg" alt="img"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="excel"
+                    ><img src="assets/img/icons/excel.svg" alt="img"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="print"
+                    ><img src="assets/img/icons/printer.svg" alt="img"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /Filter -->
+          <div
+            class="card mb-0 border-0"
+            [ngClass]="{
+              'show-sub-menu': showFilters == true,
+              'hide-sub-menu': showFilters == false
+            }"
+          >
+            <div class="card-body pb-0">
+              <div class="row">
+                <div class="col-lg-2 col-sm-6 col-12">
+                  <div class="form-group">
+                    <div class="input-groupicon">
+                      <ngx-datepicker [(ngModel)]="date"></ngx-datepicker>
+                      <div class="addonset"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-sm-6 col-12">
+                  <div class="form-group">
+                    <div class="input-groupicon">
+                      <ngx-datepicker [(ngModel)]="date"></ngx-datepicker>
+                      <div class="addonset"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-1 col-sm-6 col-12 ms-auto">
+                  <div class="form-group">
+                    <a class="btn btn-filters ms-auto"
+                      ><img src="assets/img/icons/search-whites.svg" alt="img"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /Filter -->
+          <div class="table-responsive">
+            <table
+              (matSortChange)="sortPaymentData($event)"
+              matSort
+              matSortActive="Sno"
+              matSortDirection="asc"
+              matSortDisableClear
+              class="table datanew"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    <label
+                      class="checkboxs"
+                      (click)="paymentSelectAll(paymentInitChecked)"
+                    >
+                      <input type="checkbox" [(ngModel)]="paymentInitChecked" />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </th>
+                  <th mat-sort-header="DATE">DATE</th>
+                  <th mat-sort-header="Purchase">Purchase</th>
+                  <th mat-sort-header="Reference">Reference</th>
+                  <th mat-sort-header="Suppliername">Supplier name</th>
+                  <th mat-sort-header="Amount">Amount</th>
+                  <th mat-sort-header="Paid">Paid</th>
+                  <th mat-sort-header="paidby">paid by</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let report2 of paymentData">
+                  <td>
+                    <label class="checkboxs">
+                      <input type="checkbox" [(ngModel)]="report2.isSelected" />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </td>
+                  <td>{{ report2.DATE }}</td>
+                  <td>{{ report2.Purchase }}</td>
+                  <td>{{ report2.Reference }}</td>
+                  <td>{{ report2.Suppliername }}</td>
+                  <td>{{ report2.Amount }}</td>
+                  <td>{{ report2.Paid }}</td>
+                  <td>{{ report2.paidby }}</td>
+                </tr>
+              </tbody>
+            </table>
+<custom-pagination></custom-pagination>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="return" role="tabpanel">
+          <div class="table-top">
+            <div class="search-set">
+              <div class="search-path">
+                <a
+                  (click)="showFilte = !showFilte"
+                  [class.setclose]="showFilte == true"
+                  class="btn btn-filter"
+                  id="filter_search"
+                >
+                  <img
+                    *ngIf="showFilte == false"
+                    src="assets/img/icons/filter.svg"
+                    alt="img"
+                  />
+                  <span
+                    ><img
+                      *ngIf="showFilte == true"
+                      src="assets/img/icons/filter.svg"
+                      alt="img"
+                  /></span>
+                </a>
+              </div>
+              <div class="search-input">
+                <a class="btn btn-searchset"
+                  ><img src="assets/img/icons/search-white.svg" alt="img"
+                /></a>
+                <div class="dataTables_filter">
+                  <label>
+                    <input
+                      [(ngModel)]="searchDataValue"
+                      (ngModelChange)="searchData(searchDataValue)"
+                      type="search"
+                      class="form-control"
+                      placeholder="Search..."
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="wordset">
+              <ul>
+                <li>
+                  <a
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="pdf"
+                    ><img src="assets/img/icons/pdf.svg" alt="img"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="excel"
+                    ><img src="assets/img/icons/excel.svg" alt="img"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="print"
+                    ><img src="assets/img/icons/printer.svg" alt="img"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /Filter -->
+          <div
+            class="card mb-0 border-0"
+            [ngClass]="{
+              'show-sub-menu': showFilte == true,
+              'hide-sub-menu': showFilte == false
+            }"
+          >
+            <div class="card-body pb-0">
+              <div class="row">
+                <div class="col-lg-2 col-sm-6 col-12">
+                  <div class="form-group">
+                    <div class="input-groupicon">
+                      <ngx-datepicker [(ngModel)]="date"></ngx-datepicker>
+                      <div class="addonset"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-sm-6 col-12">
+                  <div class="form-group">
+                    <div class="input-groupicon">
+                      <ngx-datepicker [(ngModel)]="date"></ngx-datepicker>
+                      <div class="addonset"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-1 col-sm-6 col-12 ms-auto">
+                  <div class="form-group">
+                    <a class="btn btn-filters ms-auto"
+                      ><img src="assets/img/icons/search-whites.svg" alt="img"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /Filter -->
+          <div class="table-responsive">
+            <table
+              (matSortChange)="sortReturnData($event)"
+              matSort
+              matSortActive="Sno"
+              matSortDirection="asc"
+              matSortDisableClear
+              class="table datanew"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    <label
+                      class="checkboxs"
+                      (click)="returnSelectAll(returnInitChecked)"
+                    >
+                      <input type="checkbox" [(ngModel)]="returnInitChecked" />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </th>
+                  <th mat-sort-header="Reference">Reference</th>
+                  <th mat-sort-header="Suppliername">Supplier name</th>
+                  <th mat-sort-header="Amount">Amount</th>
+                  <th mat-sort-header="Paid">Paid</th>
+                  <th mat-sort-header="Amountdue">Amount due</th>
+                  <th mat-sort-header="Status">Status</th>
+                  <th mat-sort-header="PaymentStatus">Paument Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let report3 of returnData">
+                  <td>
+                    <label class="checkboxs">
+                      <input type="checkbox" [(ngModel)]="report3.isSelected" />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </td>
+                  <td>{{ report3.Reference }}</td>
+                  <td>{{ report3.Suppliername }}</td>
+                  <td>{{ report3.Amount }}</td>
+                  <td>{{ report3.Paid }}</td>
+                  <td>{{ report3.Amountdue }}</td>
+                  <td>
+                    <span
+                      [ngClass]="{
+                        'bg-lightgreen': report3.Status === 'Completed'
+                      }"
+                      class="badges"
+                      >{{ report3.Status }}</span
+                    >
+                  </td>
+                  <td>
+                    <span
+                      [ngClass]="{
+                        'bg-lightgreen': report3.PaymentStatus === 'Paid',
+                        'bg-lightred': report3.PaymentStatus === 'Overdue',
+                        'bg-lightgrey': report3.PaymentStatus === 'Unpaid'
+                      }"
+                      class="badges"
+                      >{{ report3.PaymentStatus }}</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+<custom-pagination></custom-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /product list -->

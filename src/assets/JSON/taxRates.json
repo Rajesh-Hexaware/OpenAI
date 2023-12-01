@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "Taxname": "SGST 9%",
+      "Tax": "9.00",
+      "isSelected": false,
+      "isStatus": true
+    },
+    {
+      "Taxname": "ISGT 9%",
+      "Tax": "9.00",
+      "isSelected": false,
+      "isStatus": true
+    },
+    {
+      "Taxname": "IGST 4.5%",
+      "Tax": "4.50",
+      "isSelected": false,
+      "isStatus": false
+    },
+    {
+      "Taxname": "SGST 4.5%",
+      "Tax": "4.50",
+      "isSelected": false,
+      "isStatus": true
+    }
+  ],
+  "totalData": 4
+}

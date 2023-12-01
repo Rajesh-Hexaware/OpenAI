@@ -1,0 +1,101 @@
+
+        <div class="page-header">
+            <div class="page-title">
+                <h4>Group Permissions</h4>
+                <h6>Manage Group Permissions</h6>
+            </div>
+            <div class="page-btn">
+                <a  class="btn btn-added" [routerLink]="routes.createPermission" ><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Add Group Permission</a>
+            </div>
+        </div>
+        <!-- /product list -->
+        <div class="card">
+            <div class="card-body">
+                <div class="table-top">
+                    <div class="search-set">
+                                <div class="search-input">
+          <a class="btn btn-searchset"
+            ><img src="assets/img/icons/search-white.svg" alt="img"
+          /></a>
+          <div class="dataTables_filter">
+            <label>
+              <input
+                [(ngModel)]="searchDataValue"
+                (ngModelChange)="searchData(searchDataValue)"
+                type="search"
+                class="form-control"
+                placeholder="Search..."
+              />
+            </label>
+          </div>
+        </div>
+                    </div>
+                    <div class="wordset">
+                        <ul>
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="assets/img/icons/pdf.svg" alt="img"></a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="assets/img/icons/excel.svg" alt="img"></a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="assets/img/icons/printer.svg" alt="img"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                          <table
+        (matSortChange)="sortData($event)"
+        matSort
+        matSortActive="Sno"
+        matSortDirection="asc"
+        matSortDisableClear  class="table  datanew">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="checkboxs" (click)="selectAll(initChecked)">
+                                        <input type="checkbox" [(ngModel)]="initChecked">
+                                        <span class="checkmarks"></span>
+                                    </label>
+                                </th>
+                                <th mat-sort-header="Role">Role</th>
+                                <th mat-sort-header="description">description</th>
+                                <th mat-sort-header="Status">Status</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let settings of tableData; let i = index">
+                                <td>
+                                    <label class="checkboxs">
+                                        <input type="checkbox" [(ngModel)]="settings.isSelected">
+                                        <span class="checkmarks"></span>
+                                    </label>
+                                </td>
+                                <td>{{settings.Role}}</td>
+                                <td>{{settings.description}}</td>
+                                <td>
+                                    <span class="badges bg-lightgreen">{{settings.Status}}</span>
+                                </td>
+                                <td class="text-end">
+                                    <a class="me-3" routerLink="//settings/editpermission">
+                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                    </a>
+                                    <a (click)="deleteBtn()" class="me-3 confirm-text" href="javascript:void(0);">
+                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr *ngIf="tableData.length === 0">
+                                <td colspan="12">
+                                  <h5 class="no-record">No matching records found</h5>
+                                </td>
+                              </tr>
+                        </tbody>
+                    </table>
+<custom-pagination></custom-pagination>
+                </div>
+            </div>
+        </div>
+        <!-- /product list -->

@@ -1,0 +1,137 @@
+{
+  "data": [
+    {
+      "ProductName": "Macbook pro",
+      "SKU": "PT001",
+      "Category": "Computers",
+      "isSelected": false,
+      "Brand": "N/D",
+      "price": "1500.00",
+      "Unit": "pc",
+      "Qty": "100.00",
+      "CreatedBy": "Admin",
+      "img": "assets/img/product/product1.jpg"
+    },
+    {
+      "ProductName": "Orange",
+      "SKU": "PT002",
+      "Category": "Fruits",
+      "isSelected": false,
+      "Brand": "N/D",
+      "price": "10.00",
+      "Unit": "pc",
+      "Qty": "100.00",
+      "CreatedBy": "Admin",
+      "img": "assets/img/product/product2.jpg"
+    },
+    {
+      "ProductName": "Pineapple",
+      "SKU": "PT003",
+      "Category": "Fruits",
+      "isSelected": false,
+      "Brand": "N/D",
+      "price": "10.00",
+      "Unit": "pc",
+      "Qty": "100.00",
+      "CreatedBy": "Admin",
+      "img": "assets/img/product/product3.jpg"
+    },
+    {
+      "ProductName": "Strawberry",
+      "SKU": "PT004",
+      "Category": "Fruits",
+      "isSelected": false,
+      "Brand": "N/D",
+      "price": "10.00",
+      "Unit": "pc",
+      "Qty": "100.00",
+      "CreatedBy": "Admin",
+      "img": "assets/img/product/product4.jpg"
+    },
+    {
+      "ProductName": "Avocat",
+      "SKU": "PT005",
+      "Category": "Accessories",
+      "isSelected": false,
+      "Brand": "N/D",
+      "price": "10.00",
+      "Unit": "pc",
+      "Qty": "150.00",
+      "CreatedBy": "Admin",
+      "img": "assets/img/product/product5.jpg"
+    },
+    {
+      "ProductName": "Macbook Pro",
+      "SKU": "PT006",
+      "Category": "Shoes",
+      "isSelected": false,
+      "Brand": "N/D",
+      "price": "10.00",
+      "Unit": "pc",
+      "Qty": "100.00",
+      "CreatedBy": "Admin",
+      "img": "assets/img/product/product6.jpg"
+    },
+    {
+      "ProductName": "Apple Earpods",
+      "SKU": "PT007",
+      "Category": "Shoes",
+      "isSelected": false,
+      "Brand": "N/D",
+      "price": "10.00",
+      "Unit": "pc",
+      "Qty": "100.00",
+      "CreatedBy": "Admin",
+      "img": "assets/img/product/product7.jpg"
+    },
+    {
+      "ProductName": "iPhone 11",
+      "SKU": "PT008",
+      "Category": "Fruits",
+      "isSelected": false,
+      "Brand": "N/D",
+      "price": "10.00",
+      "Unit": "pc",
+      "Qty": "100.00",
+      "CreatedBy": "Admin",
+      "img": "assets/img/product/product8.jpg"
+    },
+    {
+      "ProductName": "samsung",
+      "SKU": "PT009",
+      "Category": "Earphones",
+      "isSelected": false,
+      "Brand": "N/D",
+      "price": "10.00",
+      "Unit": "pc",
+      "Qty": "100.00",
+      "CreatedBy": "Admin",
+      "img": "assets/img/product/product9.jpg"
+    },
+    {
+      "ProductName": "Banana",
+      "SKU": "PT0010",
+      "Category": "Health Care",
+      "isSelected": false,
+      "Brand": "N/D",
+      "price": "10.00",
+      "Unit": "kg",
+      "Qty": "100.00",
+      "CreatedBy": "Admin",
+      "img": "assets/img/product/product11.jpg"
+    },
+    {
+      "ProductName": "Limon",
+      "SKU": "PT0011",
+      "Category": "Health Care",
+      "isSelected": false,
+      "Brand": "N/D",
+      "price": "10.00",
+      "Unit": "kg",
+      "Qty": "100.00",
+      "CreatedBy": "Admin",
+      "img": "assets/img/product/product17.jpg"
+    }
+  ],
+  "totalData": 11
+}

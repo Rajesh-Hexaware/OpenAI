@@ -1,0 +1,204 @@
+{
+  "data": [
+    {
+      "Name": "Users Mangement",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "ViewAllRecords": false,
+      "details": [
+        "View",
+        "Create",
+        "Edit",
+        "Delete",
+        "View all records of all users",
+        "Select All"
+      ]
+    },
+    {
+      "Name": "User Permission",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Products",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": [
+        "View",
+        "Create",
+        "Edit",
+        "Delete",
+        "Barcode",
+        "Import Products",
+        "Select All"
+      ]
+    },
+    {
+      "Name": "Adjustment",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Transfer",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Expenses",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Sales",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Purchase",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Quotations",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Sales Return",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Purchase Return",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Payment Sales",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Payments purchase",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Payments Return",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Customer list",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Supplier List",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    },
+    {
+      "Name": "Reports",
+      "View": false,
+      "SelectAll": false,
+      "Create": false,
+      "Edit": false,
+      "Delete": false,
+      "Barcode": false,
+      "ImportProducts": false,
+      "details": ["View", "Create", "Edit", "Delete", "Select All"]
+    }
+  ],
+  "totalData": 17
+}

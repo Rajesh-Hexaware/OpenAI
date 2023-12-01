@@ -1,0 +1,82 @@
+<div class="cardhead">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="page-title">Popover</h3>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="routes.dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Popover</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Header -->
+
+    <div class="row">
+        <!-- Popover -->
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Basic Popover</h5>
+                </div>
+                <div class="card-body">
+                    <div class="popover-list">
+                        <button type="button" class="btn btn-primary me-1"
+                            popover="And here's some amazing content. It's very engaging. Right?"
+                            popoverTitle="Popover title" placement="top">
+                            Click to toggle popover
+                        </button>
+                        <button type="button" class="example-popover btn btn-primary me-1"
+                            popover="nd here's some amazing content. It's very engaging. Right?"
+                            popoverTitle="Popover title" triggers="focus">
+                            Dismissible popover
+                        </button>
+                        <button type="button" class="example-popover btn btn-primary" popover="I will hide on blur"
+                            title="Popover title" triggers="mouseenter:mouseleave">
+                            On Hover Tooltip
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Popover -->
+
+        <!-- Popover -->
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Direction Popover</h5>
+                </div>
+                <div class="card-body">
+                    <div class="popover-list">
+                        <button type="button" class="btn btn-primary me-1"
+                            popover="And here's some amazing content. It's very engaging. Right?"
+                            popoverTitle="Popover title" placement="top">
+                            Popover on top
+                        </button>
+
+                        <button type="button" class="example-popover btn btn-primary me-1"
+                            popover="And here's some amazing content. It's very engaging. Right?"
+                            popoverTitle="Popover title" placement="right">
+                            Popover on right
+                        </button>
+
+                        <button type="button" class="example-popover btn btn-primary me-1"
+                            popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                            popoverTitle="Popover on bottom" placement="bottom">
+                            Popover on bottom
+                        </button>
+                        <button type="button" class="example-popover btn btn-primary"
+                            popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                            popoverTitle="Popover on left" placement="left">
+                            Popover on left
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Popover -->
+    </div>
+
+</div>

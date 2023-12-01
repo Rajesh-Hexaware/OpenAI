@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "PaymentTypeName": "Cash",
+      "isSelected": false,
+      "isStatus": true
+    },
+    {
+      "PaymentTypeName": "Card",
+      "isSelected": false,
+      "isStatus": false
+    },
+    {
+      "PaymentTypeName": "Credit",
+      "isSelected": false,
+      "isStatus": true
+    }
+  ],
+  "totalData": 3
+}

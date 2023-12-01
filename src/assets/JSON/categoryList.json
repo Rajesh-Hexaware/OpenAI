@@ -1,0 +1,109 @@
+{
+  "data": [
+    {
+      "img": "assets/img/product/product6.jpg",
+      "Categoryname": "Computers",
+      "CategoryCode": "CT001",
+      "isSelected": false,
+      "Description": "Computers Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product3.jpg",
+      "Categoryname": "Fruits",
+      "CategoryCode": "CT002",
+      "isSelected": false,
+      "Description": "Fruits Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product2.jpg",
+      "Categoryname": "Fruits",
+      "CategoryCode": "CT003",
+      "isSelected": false,
+      "Description": "Fruits Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product3.jpg",
+      "Categoryname": "Fruits",
+      "CategoryCode": "CT004",
+      "isSelected": false,
+      "Description": "Fruits Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product6.jpg",
+      "Categoryname": "Accessories",
+      "CategoryCode": "CT005",
+      "isSelected": false,
+      "Description": "Accessories Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product8.jpg",
+      "Categoryname": "Accessories",
+      "CategoryCode": "CT006",
+      "isSelected": false,
+      "Description": "Accessories Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product9.jpg",
+      "Categoryname": "Accessories",
+      "CategoryCode": "CT007",
+      "isSelected": false,
+      "Description": "Accessories Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product1.jpg",
+      "Categoryname": "Accessories",
+      "CategoryCode": "CT008",
+      "isSelected": false,
+      "Description": "Accessories Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product7.jpg",
+      "Categoryname": "Accessories",
+      "CategoryCode": "CT009",
+      "isSelected": false,
+      "Description": "Accessories Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product10.jpg",
+      "Categoryname": "Accessories",
+      "CategoryCode": "CT0010",
+      "isSelected": false,
+      "Description": "Accessories Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product6.jpg",
+      "Categoryname": "Accessories",
+      "CategoryCode": "CT008",
+      "isSelected": false,
+      "Description": "Accessories Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product9.jpg",
+      "Categoryname": "Accessories",
+      "CategoryCode": "CT009",
+      "isSelected": false,
+      "Description": "Accessories Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "img": "assets/img/product/product1.jpg",
+      "Categoryname": "Accessories",
+      "CategoryCode": "CT0010",
+      "isSelected": false,
+      "Description": "Accessories Description",
+      "CreatedBy": "Admin"
+    }
+  ],
+  "totalData": 13
+}

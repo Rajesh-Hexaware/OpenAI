@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "Currencyname": "India - Indian rupee",
+      "Currencycode": "INR",
+      "Currencysymbol": "₹",
+      "isSelected": false,
+      "isStatus": true
+    },
+    {
+      "Currencyname": "US dollar",
+      "Currencycode": "USD",
+      "Currencysymbol": "$",
+      "isSelected": false,
+      "isStatus": true
+    }
+  ],
+  "totalData": 2
+}

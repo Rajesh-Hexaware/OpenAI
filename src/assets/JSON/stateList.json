@@ -1,0 +1,89 @@
+{
+  "data": [
+    {
+      "StateName": "Beijing",
+      "CountryName": "China",
+      "isSelected": false,
+      "isStatus": true
+    },
+    {
+      "StateName": "Newyork",
+      "CountryName": "USA",
+      "isSelected": false,
+      "isStatus": false
+    },
+    {
+      "StateName": "Athens",
+      "CountryName": "Greece",
+      "isSelected": false,
+      "isStatus": true
+    },
+    {
+      "StateName": "Thailand",
+      "CountryName": "Bangkok",
+      "isSelected": false,
+      "isStatus": false
+    },
+    {
+      "StateName": "Phuket island",
+      "CountryName": "Mueang Phuket",
+      "isSelected": false,
+      "isStatus": true
+    },
+    {
+      "StateName": "Germany",
+      "CountryName": "Berlin",
+      "isSelected": false,
+      "isStatus": false
+    },
+    {
+      "StateName": "Angola",
+      "CountryName": "Luanda",
+      "isSelected": false,
+      "isStatus": true
+    },
+    {
+      "StateName": "Albania",
+      "CountryName": "Albania",
+      "isSelected": false,
+      "isStatus": false
+    },
+    {
+      "StateName": "Turkey",
+      "CountryName": "Ankara",
+      "isSelected": false,
+      "isStatus": false
+    },
+    {
+      "StateName": "Phuket island",
+      "CountryName": "Mueang Phuket",
+      "isSelected": false,
+      "isStatus": false
+    },
+    {
+      "StateName": "Germany",
+      "CountryName": "Berlin",
+      "isSelected": false,
+      "isStatus": false
+    },
+    {
+      "StateName": "Angola",
+      "CountryName": "Luanda",
+      "isSelected": false,
+      "isStatus": false
+    },
+    {
+      "StateName": "Albania",
+      "CountryName": "Albania",
+      "isSelected": false,
+      "isStatus": false
+    },
+    {
+      "StateName": "Turkey",
+      "CountryName": "Ankara",
+      "isSelected": false,
+      "isStatus": false
+    }
+  ],
+  "totalData": 14
+}

@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "Role": "Admin",
+      "description": "Owner",
+      "Status": "Active",
+      "isSelected": false
+    },
+    {
+      "Role": "Purchase",
+      "description": "Purchase Permission",
+      "Status": "Active",
+      "isSelected": false
+    },
+    {
+      "Role": "Sales",
+      "description": "Sales Permission",
+      "Status": "Active",
+      "isSelected": false
+    }
+  ],
+  "totalData": 3
+}

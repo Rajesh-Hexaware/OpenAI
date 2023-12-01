@@ -1,0 +1,47 @@
+{
+  "data": [
+    {
+      "Date": "2022-03-07",
+      "Reference": "0101",
+      "Customer": "Walk-in Customer",
+      "Amount": "$ 1500.00"
+    },
+    {
+      "Date": "2022-03-07",
+      "Reference": "0102",
+      "Customer": "Walk-in Customer",
+      "Amount": "$ 1500.00"
+    },
+    {
+      "Date": "2022-03-07",
+      "Reference": "0103",
+      "Customer": "Walk-in Customer",
+      "Amount": "$ 1500.00"
+    },
+    {
+      "Date": "2022-03-07",
+      "Reference": "0104",
+      "Customer": "Walk-in Customer",
+      "Amount": "$ 1500.00"
+    },
+    {
+      "Date": "2022-03-07",
+      "Reference": "0105",
+      "Customer": "Walk-in Customer",
+      "Amount": "$ 1500.00"
+    },
+    {
+      "Date": "2022-03-07",
+      "Reference": "0106",
+      "Customer": "Walk-in Customer",
+      "Amount": "$ 1500.00"
+    },
+    {
+      "Date": "2022-03-07",
+      "Reference": "0107",
+      "Customer": "Walk-in Customer",
+      "Amount": "$ 1500.00"
+    }
+  ],
+  "totalData": 7
+}

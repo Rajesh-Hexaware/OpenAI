@@ -1,0 +1,93 @@
+{
+  "data": [
+    {
+      "img": "assets/img/product/product1.jpg",
+      "ProductName": "Macbook pro",
+      "isSelected": false,
+      "Purchasedamount": "38698.00",
+      "PurchasedQTY": "1248",
+      "InstockQTY": "1356"
+    },
+    {
+      "img": "assets/img/product/product2.jpg",
+      "ProductName": "Orange",
+      "isSelected": false,
+      "Purchasedamount": "36080.00",
+      "PurchasedQTY": "110",
+      "InstockQTY": "131"
+    },
+    {
+      "img": "assets/img/product/product3.jpg",
+      "ProductName": "Pineapple",
+      "isSelected": false,
+      "Purchasedamount": "21000.00",
+      "PurchasedQTY": "106",
+      "InstockQTY": "131"
+    },
+    {
+      "img": "assets/img/product/product4.jpg",
+      "ProductName": "Strawberry",
+      "isSelected": false,
+      "Purchasedamount": "11000.00",
+      "PurchasedQTY": "105",
+      "InstockQTY": "100"
+    },
+    {
+      "img": "assets/img/product/product5.jpg",
+      "ProductName": "Sunglasses",
+      "isSelected": false,
+      "Purchasedamount": "10600.00",
+      "PurchasedQTY": "105",
+      "InstockQTY": "100"
+    },
+    {
+      "img": "assets/img/product/product6.jpg",
+      "ProductName": "OrangeUnpaired gray",
+      "isSelected": false,
+      "Purchasedamount": "9984.00",
+      "PurchasedQTY": "50",
+      "InstockQTY": "50"
+    },
+    {
+      "img": "assets/img/product/product7.jpg",
+      "ProductName": "Avocat",
+      "isSelected": false,
+      "Purchasedamount": "4500.00",
+      "PurchasedQTY": "41",
+      "InstockQTY": "29"
+    },
+    {
+      "img": "assets/img/product/product8.jpg",
+      "ProductName": "Banana",
+      "isSelected": false,
+      "Purchasedamount": "900.00",
+      "PurchasedQTY": "28",
+      "InstockQTY": "24"
+    },
+    {
+      "img": "assets/img/product/product9.jpg",
+      "ProductName": "Earphones",
+      "isSelected": false,
+      "Purchasedamount": "500.00",
+      "PurchasedQTY": "20",
+      "InstockQTY": "11"
+    },
+    {
+      "img": "assets/img/product/product8.jpg",
+      "ProductName": "Banana",
+      "isSelected": false,
+      "Purchasedamount": "900.00",
+      "PurchasedQTY": "28",
+      "InstockQTY": "24"
+    },
+    {
+      "img": "assets/img/product/product9.jpg",
+      "ProductName": "Earphones",
+      "isSelected": false,
+      "Purchasedamount": "500.00",
+      "PurchasedQTY": "20",
+      "InstockQTY": "11"
+    }
+  ],
+  "totalData": 11
+}

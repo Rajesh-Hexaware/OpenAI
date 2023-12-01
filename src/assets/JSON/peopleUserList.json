@@ -1,0 +1,125 @@
+{
+  "data": [
+    {
+      "img": "assets/img/customer/customer1.jpg",
+      "Firstname": "Thomas",
+      "Lastname": "Thomas",
+      "Username": "Thomas",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "thomas@example.com"
+    },
+    {
+      "img": "assets/img/customer/customer2.jpg",
+      "Firstname": "Benjamin",
+      "Lastname": "Franklin",
+      "Username": "504Benjamin",
+      "Phone": "123-456-888",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "customer@example.com"
+    },
+    {
+      "img": "assets/img/customer/customer3.jpg",
+      "Firstname": "James",
+      "Lastname": "James",
+      "Username": "James 524",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": true,
+      "email": "james@example.com"
+    },
+    {
+      "img": "assets/img/customer/customer4.jpg",
+      "Firstname": "Bruklin",
+      "Lastname": "Bruklin",
+      "Username": " Bruklin2022",
+      "Phone": "123-456-888",
+      "isSelected": false,
+      "isStatus": true,
+      "email": "bruklin@example.com"
+    },
+    {
+      "img": "assets/img/customer/customer5.jpg",
+      "Firstname": "Franklin",
+      "Lastname": "Jacob",
+      "Username": " BeverlyWIN25",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": true,
+      "email": "Beverly@example.com"
+    },
+    {
+      "img": "assets/img/customer/customer6.jpg",
+      "Firstname": "B. Huber",
+      "Lastname": "Jacob",
+      "Username": " BeverlyWIN25",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "Huber@example.com"
+    },
+    {
+      "img": "assets/img/customer/customer7.jpg",
+      "Firstname": "Alwin",
+      "Lastname": "Alwin",
+      "Username": " Alwin243",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "customer@example.com"
+    },
+    {
+      "img": "assets/img/customer/customer8.jpg",
+      "Firstname": "Fred john",
+      "Lastname": "john",
+      "Username": " FredJ25",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": true,
+      "email": "john@example.com"
+    },
+    {
+      "img": "assets/img/customer/customer1.jpg",
+      "Firstname": "Rasmussen",
+      "Lastname": "Gothic",
+      "Username": " Cras56",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": true,
+      "email": "Rasmussen@example.com"
+    },
+    {
+      "img": "assets/img/customer/customer2.jpg",
+      "Firstname": "Grace",
+      "Lastname": "Halena",
+      "Username": " Grace2022",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": true,
+      "email": "customer@example.com"
+    },
+    {
+      "img": "assets/img/customer/customer3.jpg",
+      "Firstname": "Rasmussen",
+      "Lastname": "Gothic",
+      "Username": " Cras56",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": true,
+      "email": "Rasmussen@example.com"
+    },
+    {
+      "img": "assets/img/customer/customer4.jpg",
+      "Firstname": "Grace",
+      "Lastname": "Halena",
+      "Username": " Grace2022",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "customer@example.com"
+    }
+  ],
+  "totalData": 12
+}

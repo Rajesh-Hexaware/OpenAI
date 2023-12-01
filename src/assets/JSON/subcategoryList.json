@@ -1,0 +1,158 @@
+{
+  "data": [
+    {
+      "Image": "assets/img/product/product1.jpg",
+      "Category": "Computers",
+      "Parentcategory": "Computers",
+      "CategoryCode": "CT001",
+      "isSelected": false,
+      "Description": "Computers Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product2.jpg",
+      "Category": "Fruits",
+      "Parentcategory": "Fruits",
+      "CategoryCode": "CT002",
+      "isSelected": false,
+      "Description": "Fruits Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product3.jpg",
+      "Category": "Fruits",
+      "Parentcategory": "Fruits",
+      "CategoryCode": "CT003",
+      "isSelected": false,
+      "Description": "Fruits Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product4.jpg",
+      "Category": "Fruits",
+      "Parentcategory": "Fruits",
+      "CategoryCode": "CT004",
+      "isSelected": false,
+      "Description": "Fruits Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product5.jpg",
+      "Category": "Accessories",
+      "Parentcategory": "Accessories",
+      "CategoryCode": "CT005",
+      "isSelected": false,
+      "Description": "Accessories Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product6.jpg",
+      "Category": "Shoes",
+      "Parentcategory": "Shoes",
+      "CategoryCode": "CT006",
+      "isSelected": false,
+      "Description": "Shoes Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product7.jpg",
+      "Category": "Fruits",
+      "Parentcategory": "Fruits",
+      "CategoryCode": "CT007",
+      "isSelected": false,
+      "Description": "Fruits Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product8.jpg",
+      "Category": "Fruits",
+      "Parentcategory": "Fruits",
+      "CategoryCode": "CT008",
+      "isSelected": false,
+      "Description": "Fruits Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product9.jpg",
+      "Category": "Computers",
+      "Parentcategory": "Computers",
+      "CategoryCode": "CT009",
+      "isSelected": false,
+      "Description": "Computers Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product10.jpg",
+      "Category": "Health Care",
+      "Parentcategory": "Health Care",
+      "CategoryCode": "CT0010",
+      "isSelected": false,
+      "Description": "Health Care Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product4.jpg",
+      "Category": "Fruits",
+      "Parentcategory": "Fruits",
+      "CategoryCode": "CT004",
+      "isSelected": false,
+      "Description": "Fruits Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product5.jpg",
+      "Category": "Accessories",
+      "Parentcategory": "Accessories",
+      "CategoryCode": "CT005",
+      "isSelected": false,
+      "Description": "Accessories Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product6.jpg",
+      "Category": "Shoes",
+      "Parentcategory": "Shoes",
+      "CategoryCode": "CT006",
+      "isSelected": false,
+      "Description": "Shoes Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product7.jpg",
+      "Category": "Fruits",
+      "Parentcategory": "Fruits",
+      "CategoryCode": "CT007",
+      "isSelected": false,
+      "Description": "Fruits Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product8.jpg",
+      "Category": "Fruits",
+      "Parentcategory": "Fruits",
+      "CategoryCode": "CT008",
+      "isSelected": false,
+      "Description": "Fruits Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product9.jpg",
+      "Category": "Computers",
+      "Parentcategory": "Computers",
+      "CategoryCode": "CT009",
+      "isSelected": false,
+      "Description": "Computers Description",
+      "CreatedBy": "Admin"
+    },
+    {
+      "Image": "assets/img/product/product10.jpg",
+      "Category": "Health Care",
+      "Parentcategory": "Health Care",
+      "CategoryCode": "CT0010",
+      "isSelected": false,
+      "Description": "Health Care Description",
+      "CreatedBy": "Admin"
+    }
+  ],
+  "totalData": 17
+}

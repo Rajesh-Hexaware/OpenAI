@@ -1,0 +1,67 @@
+<div class="cardhead">
+
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Lightbox</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Lightbox</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+
+<div class="row">
+  <!-- Lightbox -->
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Single Image Lightbox</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <ng-container *ngFor="let image of albumsOne; let i = index">
+            <div class="col-md-4 mb-2 mb-md-0" *ngIf="i < 2">
+              <img
+                class="img-fluid"
+                [src]="image.src"
+                (click)="open(i, albumsOne)"
+              />
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Lightbox -->
+
+  <!-- Lightbox -->
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Image with Description</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <ng-container *ngFor="let image of albumsTwo; let i = index">
+            <div class="col-md-4 mb-2 mb-md-0" *ngIf="i > 2">
+              <img
+                class="img-fluid"
+                [src]="image.src"
+                (click)="open(i, albumsTwo)"
+              />
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Lightbox -->
+</div>
+
+    </div>
+

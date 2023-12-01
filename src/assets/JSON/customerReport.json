@@ -1,0 +1,135 @@
+{
+  "data": [
+    {
+      "Customercode": "CT_1001",
+      "Customername": "Thomas21",
+      "isSelected": false,
+      "Amount": "1500.00",
+      "Paid": "1500.00",
+      "Amountdue": "1500.00",
+      "Status": "Completed",
+      "PaymentStatus": "Paid"
+    },
+    {
+      "Customercode": "CT_1002",
+      "Customername": "504Benjamin",
+      "isSelected": false,
+      "Amount": "10.00",
+      "Paid": "10.00",
+      "Amountdue": "10.00",
+      "Status": "Completed",
+      "PaymentStatus": "Overdue"
+    },
+    {
+      "Customercode": "CT_1003",
+      "Customername": "James 524",
+      "isSelected": false,
+      "Amount": "10.00",
+      "Paid": "10.00",
+      "Amountdue": "10.00",
+      "Status": "Completed",
+      "PaymentStatus": "Overdue"
+    },
+    {
+      "Customercode": "CT_1004",
+      "Customername": "Bruklin2022",
+      "isSelected": false,
+      "Amount": "10.00",
+      "Paid": "10.00",
+      "Amountdue": "10.00",
+      "Status": "Completed",
+      "PaymentStatus": "Paid"
+    },
+    {
+      "Customercode": "CT_1005",
+      "Customername": "BeverlyWIN25",
+      "isSelected": false,
+      "Amount": "150.00",
+      "Paid": "150.00",
+      "Amountdue": "150.00",
+      "Status": "Completed",
+      "PaymentStatus": "Overdue"
+    },
+    {
+      "Customercode": "CT_1006",
+      "Customername": "BHR256",
+      "isSelected": false,
+      "Amount": "100.00",
+      "Paid": "100.00",
+      "Amountdue": "100.00",
+      "Status": "Completed",
+      "PaymentStatus": "Overdue"
+    },
+    {
+      "Customercode": "CT_1007",
+      "Customername": "Alwin243",
+      "isSelected": false,
+      "Amount": "5.00",
+      "Paid": "5.00",
+      "Amountdue": "5.00",
+      "Status": "Completed",
+      "PaymentStatus": "Paid"
+    },
+    {
+      "Customercode": "CT_1008",
+      "Customername": "FredJ25",
+      "isSelected": false,
+      "Amount": "10.00",
+      "Paid": "10.00",
+      "Amountdue": "10.00",
+      "Status": "Completed",
+      "PaymentStatus": "UnPaid"
+    },
+    {
+      "Customercode": "CT_1009",
+      "Customername": "FredJ25",
+      "isSelected": false,
+      "Amount": "10.00",
+      "Paid": "10.00",
+      "Amountdue": "10.00",
+      "Status": "Completed",
+      "PaymentStatus": "UnPaid"
+    },
+    {
+      "Customercode": "CT_1010",
+      "Customername": "Cras56",
+      "isSelected": false,
+      "Amount": "15.00",
+      "Paid": "15.00",
+      "Amountdue": "15.00",
+      "Status": "Completed",
+      "PaymentStatus": "UnPaid"
+    },
+    {
+      "Customercode": "CT_1011",
+      "Customername": "Grace2022",
+      "isSelected": false,
+      "Amount": "15.00",
+      "Paid": "15.00",
+      "Amountdue": "15.00",
+      "Status": "Completed",
+      "PaymentStatus": "UnPaid"
+    },
+    {
+      "Customercode": "CT_1011",
+      "Customername": "Cras56",
+      "isSelected": false,
+      "Amount": "15.00",
+      "Paid": "15.00",
+      "Amountdue": "15.00",
+      "Status": "Completed",
+      "PaymentStatus": "UnPaid"
+    },
+    {
+      "Customercode": "CT_1012",
+      "Customername": "Grace2022",
+      "isSelected": false,
+      "Amount": "15.00",
+      "Paid": "15.00",
+      "Amountdue": "15.00",
+      "Status": "Completed",
+      "PaymentStatus": "UnPaid"
+    }
+  ],
+  "totalData": 13
+}

@@ -1,0 +1,40 @@
+<div
+  [ngClass]="{
+    'expand-menu': miniSidebar == true && expandMenu == true ,
+    'mini-sidebar': miniSidebar == true,
+    'slide-nav': mobileSidebar == true
+  }"
+>
+  <!-- Main Wrapper -->
+  <div class="main-wrapper" [ngClass]="{ dark: darkTheme }">
+    <app-header></app-header>
+    <div>
+      <ng-container *ngIf="sideBaractivePath == false">
+        <app-sidebar-one *ngIf="changeLayout == '1'"></app-sidebar-one>
+        <app-sidebar-two *ngIf="changeLayout == '2'"></app-sidebar-two>
+        <app-sidebar-three *ngIf="changeLayout == '3'"></app-sidebar-three>
+        <app-sidebar-four *ngIf="changeLayout == '4'"></app-sidebar-four>
+        <app-sidebar-five *ngIf="changeLayout == '5'"></app-sidebar-five>
+      </ng-container>
+      <div [class.container]="changeLayout == '4' || changeLayout == '3'">
+        <div
+          class="page-wrapper"
+          [ngClass]="{
+            'page-wrapper-one': changeLayout == '2',
+            'page-wrapper-two': changeLayout == '3',
+            'page-wrapper-three': changeLayout == '4',
+            'page-wrapper-four': changeLayout == '5',
+            'ms-0': sideBaractivePath == true
+          }"
+        >
+          <div class="content">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+        <!-- Main Wrapper -->
+      </div>
+    </div>
+    <app-layout></app-layout>
+  </div>
+  <!-- Main Wrapper -->
+</div>

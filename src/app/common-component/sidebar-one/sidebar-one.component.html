@@ -1,0 +1,63 @@
+<!-- Sidebar -->
+<div
+  class="sidebar"
+  id="sidebar"
+  (mouseover)="miniSideBarMouseHover('over')"
+  (mouseout)="miniSideBarMouseHover('out')"
+>
+  <div class="sidebar-inner slimscroll">
+    <perfect-scrollbar>
+      <div id="sidebar-menu" class="sidebar-menu">
+        <ul>
+          <ng-container *ngFor="let mainTittle of side_bar_data_one">
+            <li class="submenu-open submenu-open-one"> 
+                <h6 class="submenu-hdr submenu-hdr-one">{{ mainTittle.tittle }}</h6>
+                <ng-container *ngFor="let menu of mainTittle?.menu">
+                  <ul>
+                    <li 
+                        [class.active]="page === menu.page || base === menu.base"
+                        *ngIf="menu?.hasSubRoute == false"
+                    >
+                        <a [routerLink]="menu?.route" class="sub-active"
+                            ><i class="feather" [class]="'icon-' + menu.icon"></i>
+                            <span>{{ menu?.menuValue }}</span>
+                        </a>
+                    </li>
+                    <li 
+                        class="submenu"
+                        *ngIf="menu.hasSubRoute == true"
+                        [class.active]="base === menu.base"
+                      
+                    >
+                        <a  href="javascript:void(0)"  (click)="expandSubMenus(menu)"
+                            [ngClass]="{ subdrop: menu.showSubRoute == true }" class="sub-active">
+                            <i class="feather" [class]="'icon-' + menu.icon"></i>
+                            <span>{{ menu.menuValue }}</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul
+                            [ngClass]="
+                            menu.showSubRoute == true
+                            ? 'show-sub-menu'
+                            : 'hide-sub-menu'
+                        ">
+                            <ng-container *ngFor="let subMenus of menu.subMenus">
+                            <li class="submenus-one">
+                                <a [routerLink]="subMenus.route"
+                                [class.active]="page === subMenus.page"
+                                >{{ subMenus.menuValue }}</a>
+                            </li>
+                        </ng-container>
+                        </ul>
+                    </li>
+                  </ul>
+              </ng-container>
+            </li>
+
+        </ng-container>
+        </ul>
+      </div>
+    </perfect-scrollbar>
+  </div>
+</div>
+<!-- /Sidebar -->

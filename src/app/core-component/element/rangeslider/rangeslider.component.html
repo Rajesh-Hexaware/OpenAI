@@ -1,0 +1,114 @@
+<div class="cardhead">
+
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="page-title">Range Slider</h3>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="routes.dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Range Slider</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Header -->
+
+    <div class="row">
+        <!-- Rangeslider -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Default</h5>
+                </div>
+                <div class="card-body">
+                    <ngx-slider [(value)]="value" [options]="options"></ngx-slider>
+                </div>
+            </div>
+        </div>
+        <!-- /Rangeslider -->
+
+        <!-- Rangeslider -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Min-Max</h5>
+                </div>
+                <div class="card-body">
+                    <ngx-slider [(value)]="value1" [options]="options1"></ngx-slider>
+                </div>
+            </div>
+        </div>
+        <!-- /Rangeslider -->
+
+        <!-- Rangeslider -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Prefix</h5>
+                </div>
+                <div class="card-body">
+                    <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options2"></ngx-slider>
+                </div>
+            </div>
+        </div>
+        <!-- /Rangeslider -->
+
+        <!-- Rangeslider -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Range</h5>
+                </div>
+                <div class="card-body">
+                    <ngx-slider [(value)]="value3" [(highValue)]="highValue3" [options]="options3"></ngx-slider>
+                </div>
+            </div>
+        </div>
+        <!-- /Rangeslider -->
+
+        <!-- Rangeslider -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Step</h5>
+                </div>
+                <div class="card-body">
+                    <ngx-slider [(value)]="value4" [(highValue)]="highValue4" [options]="options4"></ngx-slider>
+                </div>
+            </div>
+        </div>
+        <!-- /Rangeslider -->
+
+        <!-- Rangeslider -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Custom Values</h5>
+                </div>
+                <div class="card-body">
+                    <div class="custom-slider">
+                        <ngx-slider [(value)]="value5" [(highValue)]="highValue5" [options]="options5"></ngx-slider>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Rangeslider -->
+
+        <!-- Rangeslider -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Modern skin</h5>
+                </div>
+                <div class="card-body">
+                    <ngx-slider [(value)]="value6" [(highValue)]="highValue6" [options]="options6"></ngx-slider>
+                </div>
+            </div>
+        </div>
+        <!-- /Rangeslider -->
+    </div>
+
+
+</div>

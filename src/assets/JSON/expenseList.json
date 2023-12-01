@@ -1,0 +1,113 @@
+{
+  "data": [
+    {
+      "Categoryname": "Employee Benefits",
+      "Reference": "PT001",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "Active",
+      "Amount": "120",
+      "Description": "Employee Vehicle"
+    },
+    {
+      "Categoryname": "Foods & Snacks",
+      "Reference": "PT002",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "Active",
+      "Amount": "250",
+      "Description": "Employee Foods"
+    },
+    {
+      "Categoryname": "Entertainment",
+      "Reference": "PT003",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "In Active",
+      "Amount": "120",
+      "Description": "Office Vehicle"
+    },
+    {
+      "Categoryname": "Office Expenses & Postage",
+      "Reference": "PT004",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "Active",
+      "Amount": "320",
+      "Description": "Employee Foods"
+    },
+    {
+      "Categoryname": "Employee Benefits",
+      "Reference": "PT005",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "Active",
+      "Amount": "250",
+      "Description": "Employee Vehicle"
+    },
+    {
+      "Categoryname": "Foods & Snacks",
+      "Reference": "PT006",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "Active",
+      "Amount": "250",
+      "Description": "Employee Foods"
+    },
+    {
+      "Categoryname": "Entertainment",
+      "Reference": "PT007",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "In Active",
+      "Amount": "120",
+      "Description": "Office Vehicle"
+    },
+    {
+      "Categoryname": "Office Expenses & Postage",
+      "Reference": "PT008",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "Active",
+      "Amount": "320",
+      "Description": "Employee Foods"
+    },
+    {
+      "Categoryname": "Employee Benefits",
+      "Reference": "PT009",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "Active",
+      "Amount": "120",
+      "Description": "Employee Vehicle"
+    },
+    {
+      "Categoryname": "Foods & Snacks",
+      "Reference": "PT010",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "Active",
+      "Amount": "250",
+      "Description": "Employee Foods"
+    },
+    {
+      "Categoryname": "Entertainment",
+      "Reference": "PT011",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "In Active",
+      "Amount": "120",
+      "Description": "Office Vehicle"
+    },
+    {
+      "Categoryname": "Office Expenses & Postage",
+      "Reference": "PT012",
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Status": "Active",
+      "Amount": "320",
+      "Description": "Employee Foods"
+    }
+  ],
+  "totalData": 12
+}

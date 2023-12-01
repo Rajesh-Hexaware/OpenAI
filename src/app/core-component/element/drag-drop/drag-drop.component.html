@@ -1,0 +1,96 @@
+<div class="cardhead">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="page-title">Drag &amp; Drop</h3>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="routes.dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Drag &amp; Drop</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Header -->
+
+    <div class="row">
+        <ng-container *ngFor="let item of dragCardOne">
+            <!-- Drag Card -->
+            <div class="col-md-4" cdkDrag>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">{{ item.tittle }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            {{ item.content }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- /Drag Card -->
+        </ng-container>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Basic List Group Sortable</h5>
+                </div>
+                <div class="card-body">
+                    <div cdkDropList (cdkDropListDropped)="drop($event)">
+                        <!-- Drag Card -->
+                        <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let item of basicListGroup" cdkDrag>
+                                <div *cdkDragPlaceholder></div>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">{{ item.tittle }}</h5>
+                                        <p>{{ item.content }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /Drag Card -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Drag Card -->
+        <div class="col-md-12">
+            <div class="card" cdkDropListGroup>
+                <div class="card-header">
+                    <h5 class="card-title">Drag Handler</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4 class="my-1">To Do</h4>
+                            <ul class="list-group" cdkDropList cdkDropListSortingDisabled [cdkDropListData]="todoList"
+                                (cdkDropListDropped)="dropTodo($event)">
+                                <li cdkDrag class="list-group-item" *ngFor="let item of todoList">
+                                    <span class="handle">+</span> {{ item }}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <h4 class="my-1">Done</h4>
+                            <ul class="list-group" cdkDropList [cdkDropListData]="doneList"
+                                (cdkDropListDropped)="dropTodo($event)">
+                                <li cdkDrag class="list-group-item" *ngFor="let item of doneList">
+                                    <span class="handle">+</span> {{ item }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Drag Card -->
+    </div>
+
+</div>

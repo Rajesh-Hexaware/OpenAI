@@ -1,0 +1,125 @@
+{
+  "data": [
+    {
+      "Date": "19 Nov 2022",
+      "Reference": "TR0101",
+      "isSelected": false,
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "1500.00",
+      "Status": "Completed"
+    },
+    {
+      "Date": "19 Nov 2022",
+      "Reference": "TR0102",
+      "isSelected": false,
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "45000.00",
+      "Status": "Completed"
+    },
+    {
+      "Date": "19 Nov 2022",
+      "Reference": "TR0103",
+      "isSelected": false,
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "2400.00",
+      "Status": "Completed"
+    },
+    {
+      "Date": "19 Nov 2022",
+      "Reference": "TR0104",
+      "isSelected": false,
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "2400.00",
+      "Status": "Completed"
+    },
+    {
+      "Date": "19 Nov 2022",
+      "Reference": "TR0105",
+      "isSelected": false,
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "2400.00",
+      "Status": "Completed"
+    },
+    {
+      "Date": "19 Nov 2022",
+      "Reference": "TR0106",
+      "isSelected": false,
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "8456.00",
+      "Status": "Completed"
+    },
+    {
+      "Date": "19 Nov 2022",
+      "Reference": "TR0107",
+      "isSelected": false,
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "150.00",
+      "Status": "Completed"
+    },
+    {
+      "Date": "19 Nov 2022",
+      "Reference": "TR0108",
+      "isSelected": false,
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "365.00",
+      "Status": "Pending"
+    },
+    {
+      "Date": "19 Nov 2022",
+      "Reference": "TR0109",
+      "isSelected": false,
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "365.00",
+      "Status": "Pending"
+    },
+    {
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Reference": "TR01010",
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "365.00",
+      "Status": "Pending"
+    },
+    {
+      "Date": "19 Nov 2022",
+      "isSelected": false,
+      "Reference": "TR01011",
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "365.00",
+      "Status": "Pending"
+    },
+    {
+      "Date": "19 Nov 2022",
+      "Reference": "TR01011",
+      "isSelected": false,
+      "From": "Store1",
+      "Paid": "Store2",
+      "items": "10.00",
+      "Grandtotal": "365.00",
+      "Status": "Pending"
+    }
+  ],
+  "totalData": 12
+}

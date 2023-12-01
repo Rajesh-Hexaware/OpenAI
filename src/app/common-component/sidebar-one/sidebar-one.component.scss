@@ -1,0 +1,30 @@
+.none {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+#sidebar .sidebar-inner {
+  width: 100%;
+}
+
+.mainactive {
+  background: #1b2850;
+  color: #fff;
+  border-radius: 5px;
+}
+.submenu-open-one {
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid rgba(222, 226, 230, 0.5);
+}
+.sidebar .sidebar-menu > ul > li.submenu-open .submenu-hdr.submenu-hdr-one {
+  margin: 15px 0 10px 0;
+}
+.sidebar .sidebar-menu > ul > li.submenu-open .submenu-hdr.submenu-hdr-one:first-child {
+  margin-top: 0;
+}
+.sidebar .sidebar-menu > ul > li.submenu-open ul .submenu ul .submenus-one.active a{
+  background: none;
+}

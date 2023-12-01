@@ -1,0 +1,148 @@
+{
+  "data": [
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product1.jpg",
+      "Productname": "Macbook pro",
+      "Purchasedamount": "38698.00",
+      "isSelected": false,
+      "purchasedQTY": "1248",
+      "Paid": "0.00",
+      "balance": "38698.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product2.jpg",
+      "Productname": "Orange",
+      "Purchasedamount": "36080.00",
+      "isSelected": false,
+      "purchasedQTY": "110",
+      "Paid": "0.00",
+      "balance": "36080.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product3.jpg",
+      "Productname": "Pineapple",
+      "Purchasedamount": "21000.00",
+      "isSelected": false,
+      "purchasedQTY": "106",
+      "Paid": "0.00",
+      "balance": "21000.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product4.jpg",
+      "Productname": "Strawberry",
+      "Purchasedamount": "11000.00",
+      "isSelected": false,
+      "purchasedQTY": "105",
+      "Paid": "0.00",
+      "balance": "11000.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product5.jpg",
+      "Productname": "Sunglasses",
+      "Purchasedamount": "10100.00",
+      "isSelected": false,
+      "purchasedQTY": "100",
+      "Paid": "0.00",
+      "balance": "10600.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product6.jpg",
+      "Productname": "Unpaired gray",
+      "Purchasedamount": "1210.00",
+      "isSelected": false,
+      "purchasedQTY": "105",
+      "Paid": "0.00",
+      "balance": "12100.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product7.jpg",
+      "Productname": "Avocat",
+      "Purchasedamount": "4500.00",
+      "isSelected": false,
+      "purchasedQTY": "41",
+      "Paid": "0.00",
+      "balance": "4500.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product8.jpg",
+      "Productname": "Banana",
+      "Purchasedamount": "900.00",
+      "isSelected": false,
+      "purchasedQTY": "28",
+      "Paid": "0.00",
+      "balance": "900.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product9.jpg",
+      "Productname": "Earphones",
+      "Purchasedamount": "500.00",
+      "isSelected": false,
+      "purchasedQTY": "28",
+      "Paid": "0.00",
+      "balance": "500.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product10.jpg",
+      "Productname": "Limon",
+      "Purchasedamount": "1500.00",
+      "isSelected": false,
+      "purchasedQTY": "28",
+      "Paid": "0.00",
+      "balance": "500.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product8.jpg",
+      "Productname": "Banana",
+      "Purchasedamount": "900.00",
+      "isSelected": false,
+      "purchasedQTY": "28",
+      "Paid": "0.00",
+      "balance": "900.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product9.jpg",
+      "Productname": "Earphones",
+      "Purchasedamount": "500.00",
+      "isSelected": false,
+      "purchasedQTY": "28",
+      "Paid": "0.00",
+      "balance": "500.00",
+      "Status": "Received"
+    },
+    {
+      "purchasedDate": "07/12/2021 06:58:25",
+      "img": "assets/img/product/product10.jpg",
+      "Productname": "Limon",
+      "Purchasedamount": "1500.00",
+      "isSelected": false,
+      "purchasedQTY": "28",
+      "Paid": "0.00",
+      "balance": "500.00",
+      "Status": "Received"
+    }
+  ],
+  "totalData": 13
+}

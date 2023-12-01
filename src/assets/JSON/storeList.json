@@ -1,0 +1,101 @@
+{
+  "data": [
+    {
+      "Storename": "Thomas",
+      "Username": "Thomas21",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "email": "thomas@example.com",
+      "isStatus": true
+    },
+    {
+      "Storename": "Benjamin",
+      "Username": "504Benjamin",
+      "Phone": "123-456-888",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "customer@example.com"
+    },
+    {
+      "Storename": "James",
+      "Username": "James 524",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "james@example.com"
+    },
+    {
+      "Storename": "Bruklin",
+      "Username": " Bruklin2022",
+      "Phone": "123-456-888",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "bruklin@example.com"
+    },
+    {
+      "Storename": "Franklin",
+      "Username": " BeverlyWIN25",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "Beverly@example.com"
+    },
+    {
+      "Storename": "B. Huber",
+      "Username": " BeverlyWIN25",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": true,
+      "email": "Huber@example.com"
+    },
+    {
+      "Storename": "Alwin",
+      "Username": " Alwin243",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": true,
+      "email": "customer@example.com"
+    },
+    {
+      "Storename": "Fred john",
+      "Username": " FredJ25",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "john@example.com"
+    },
+    {
+      "Storename": "Rasmussen",
+      "Username": " Cras56",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "Rasmussen@example.com"
+    },
+    {
+      "Storename": "Grace",
+      "Username": " Grace2022",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": false,
+      "email": "customer@example.com"
+    },
+    {
+      "Storename": "Rasmussen",
+      "Username": " Cras56",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": true,
+      "email": "Rasmussen@example.com"
+    },
+    {
+      "Storename": "Grace",
+      "Username": " Grace2022",
+      "Phone": "+12163547758",
+      "isSelected": false,
+      "isStatus": true,
+      "email": "customer@example.com"
+    }
+  ],
+  "totalData": 12
+}

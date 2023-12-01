@@ -1,0 +1,88 @@
+
+        <div class="page-header">
+            <div class="page-title">
+                <h4>Create Permission</h4>
+                <h6>Manage Create Permissions</h6>
+            </div>
+        </div>
+        <!-- /product list -->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="form-group">
+                            <label>Role</label>
+                            <input type="text" placeholder="Admin">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-sm-12">
+                        <div class="form-group">
+                            <label>Role Description</label>
+                            <input type="text" placeholder="Owner">
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="input-checkset">
+                            <ul>
+                                <li>
+                                    <label class="inputcheck" (click)="selectAll()">Select All
+                                        <input type="checkbox" id="select-all" [(ngModel)]="commonSelect">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="productdetails product-respon">
+                            <ul>
+                                <li *ngFor="let editpermission of Permission; let  mainindex = index ">
+                                    <h4>{{editpermission.Name}}</h4>
+                                    <div class="input-checkset">
+                                        <ul>
+                                            <li  *ngFor="let details of editpermission.details; let  i = index ">
+                                                <label class="inputcheck" *ngIf="details === 'View'">{{details}}
+                                                    <input type="checkbox" [(ngModel)]="editpermission.View">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="inputcheck" *ngIf="details === 'Create'">{{details}}
+                                                    <input type="checkbox" [(ngModel)]="editpermission.Create">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="inputcheck" *ngIf="details === 'Edit'" >{{details}}
+                                                    <input type="checkbox" [(ngModel)]="editpermission.Edit">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="inputcheck" *ngIf="details === 'Delete'" >{{details}}
+                                                    <input type="checkbox" [(ngModel)]="editpermission.Delete">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="inputcheck" *ngIf="details === 'Barcode'" >{{details}}
+                                                    <input type="checkbox" [(ngModel)]="editpermission.Barcode">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="inputcheck" *ngIf="details === 'View all records of all users'" >{{details}}
+                                                    <input type="checkbox" [(ngModel)]="editpermission.ViewAllRecords">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="inputcheck" *ngIf="details === 'Import Products'">{{details}}
+                                                    <input type="checkbox" [(ngModel)]="editpermission.ImportProducts">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="inputcheck" *ngIf="details === 'Select All'" (click)="selectOne(mainindex,editpermission.SelectAll)">{{details}}
+                                                    <input type="checkbox" [(ngModel)]="editpermission.SelectAll">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /product list -->

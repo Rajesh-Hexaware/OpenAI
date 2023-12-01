@@ -1,0 +1,145 @@
+{
+  "data": [
+    {
+      "img": "assets/img/customer/customer1.jpg",
+      "CustomerName": "Thomas",
+      "code": "201",
+      "Customer": "Thomas",
+      "Phone": "+12163547758",
+      "email": "thomas@example.com",
+      "isSelected": false,
+      "Country": "USA"
+    },
+    {
+      "img": "assets/img/customer/customer2.jpg",
+      "CustomerName": "Benjamin",
+      "code": "202",
+      "Customer": "Benjamin",
+      "Phone": "123-456-888",
+      "email": "customer@example.com",
+      "isSelected": false,
+      "Country": "USA"
+    },
+    {
+      "img": "assets/img/customer/customer2.jpg",
+      "CustomerName": "James",
+      "code": "521",
+      "Customer": "James",
+      "Phone": "123-456-888",
+      "email": "customer@example.com",
+      "isSelected": false,
+      "Country": "USA"
+    },
+    {
+      "img": "assets/img/customer/customer3.jpg",
+      "CustomerName": "Bruklin",
+      "code": "555",
+      "Customer": "Bruklin",
+      "Phone": "123-456-888",
+      "email": "bruklin@example.com",
+      "isSelected": false,
+      "Country": "Thailand"
+    },
+    {
+      "img": "assets/img/customer/customer3.jpg",
+      "CustomerName": "Beverly",
+      "code": "325",
+      "Customer": "Beverly",
+      "Phone": "+12163547758",
+      "email": "Beverly@example.com",
+      "isSelected": false,
+      "Country": "Phuket island"
+    },
+    {
+      "img": "assets/img/customer/customer4.jpg",
+      "CustomerName": "B. Huber",
+      "code": "589",
+      "Customer": "B. Huber",
+      "Phone": "123-456-888",
+      "email": "Huber@example.com",
+      "isSelected": false,
+      "Country": "Germany"
+    },
+    {
+      "img": "assets/img/customer/customer5.jpg",
+      "CustomerName": "James Stawberry",
+      "code": "254",
+      "Customer": "James Stawberry",
+      "Phone": "+12163547758",
+      "email": "customer@example.com",
+      "isSelected": false,
+      "Country": "Angola"
+    },
+    {
+      "img": "assets/img/customer/customer3.jpg",
+      "CustomerName": "James Stawberry",
+      "code": "681",
+      "Customer": "Fred john",
+      "Phone": "123-456-888",
+      "email": "john@example.com",
+      "isSelected": false,
+      "Country": "Albania"
+    },
+    {
+      "img": "assets/img/customer/customer5.jpg",
+      "CustomerName": "B. Huber",
+      "code": "589",
+      "Customer": "B. Huber",
+      "Phone": "123-456-888",
+      "email": "Huber@example.com",
+      "isSelected": false,
+      "Country": "Germany"
+    },
+    {
+      "img": "assets/img/customer/customer6.jpg",
+      "CustomerName": "James Stawberry",
+      "code": "254",
+      "Customer": "James Stawberry",
+      "Phone": "+12163547758",
+      "email": "customer@example.com",
+      "isSelected": false,
+      "Country": "Angola"
+    },
+    {
+      "img": "assets/img/customer/customer3.jpg",
+      "CustomerName": "James Stawberry",
+      "code": "681",
+      "Customer": "Fred john",
+      "Phone": "123-456-888",
+      "email": "john@example.com",
+      "isSelected": false,
+      "Country": "Albania"
+    },
+    {
+      "img": "assets/img/customer/customer5.jpg",
+      "CustomerName": "B. Huber",
+      "code": "589",
+      "Customer": "B. Huber",
+      "Phone": "123-456-888",
+      "email": "Huber@example.com",
+      "isSelected": false,
+      "Country": "Germany"
+    },
+    {
+      "img": "assets/img/customer/customer6.jpg",
+      "CustomerName": "James Stawberry",
+      "code": "254",
+      "Customer": "James Stawberry",
+      "Phone": "+12163547758",
+      "email": "customer@example.com",
+      "isSelected": false,
+      "Country": "Angola"
+    },
+    {
+      "img": "assets/img/customer/customer3.jpg",
+      "CustomerName": "James Stawberry",
+      "code": "681",
+      "Customer": "Fred john",
+      "Phone": "123-456-888",
+      "email": "john@example.com",
+      "isSelected": false,
+      "Country": "Albania"
+    }
+  ],
+  "totalData": 14
+}

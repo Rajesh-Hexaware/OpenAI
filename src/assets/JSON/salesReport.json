@@ -1,0 +1,170 @@
+{
+  "data": [
+    {
+      "ProductName": "Macbook pro",
+      "SKU": "PT001",
+      "Category": "Computers",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "1500.00",
+      "Soldqty": "1",
+      "Instockqty": "1356",
+      "img": "assets/img/product/product1.jpg"
+    },
+    {
+      "ProductName": "Orange",
+      "SKU": "PT002",
+      "Category": "Fruits",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "10.00",
+      "Soldqty": "1",
+      "Instockqty": "131",
+      "img": "assets/img/product/product2.jpg"
+    },
+    {
+      "ProductName": "Pineapple",
+      "SKU": "PT003",
+      "Category": "Fruits",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "10.00",
+      "Soldqty": "3",
+      "Instockqty": "72",
+      "img": "assets/img/product/product3.jpg"
+    },
+    {
+      "ProductName": "Strawberry",
+      "SKU": "PT004",
+      "Category": "Fruits",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "10.00",
+      "Soldqty": "1",
+      "Instockqty": "100",
+      "img": "assets/img/product/product4.jpg"
+    },
+    {
+      "ProductName": "Sunglasses",
+      "SKU": "PT005",
+      "Category": "Accessories",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "10.00",
+      "Soldqty": "1",
+      "Instockqty": "100",
+      "img": "assets/img/product/product5.jpg"
+    },
+    {
+      "ProductName": "Unpaired gray",
+      "SKU": "PT006",
+      "Category": "Shoes",
+      "isSelected": false,
+      "Brand": "Adidas",
+      "Soldamount": "100.00",
+      "Soldqty": "3",
+      "Instockqty": "50",
+      "img": "assets/img/product/product6.jpg"
+    },
+    {
+      "ProductName": "Avocat",
+      "SKU": "PT007",
+      "Category": "Fruits",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "5.00",
+      "Soldqty": "5",
+      "Instockqty": "29",
+      "img": "assets/img/product/product7.jpg"
+    },
+    {
+      "ProductName": "Banana",
+      "SKU": "PT008",
+      "Category": "Fruits",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "10.00",
+      "Soldqty": "1",
+      "Instockqty": "24",
+      "img": "assets/img/product/product8.jpg"
+    },
+    {
+      "ProductName": "Earphones",
+      "SKU": "PT009",
+      "Category": "Computers",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "15.00",
+      "Soldqty": "2",
+      "Instockqty": "11",
+      "img": "assets/img/product/product9.jpg"
+    },
+    {
+      "ProductName": "Banana",
+      "SKU": "PT010",
+      "Category": "Health Care",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "5.00",
+      "Soldqty": "5",
+      "Instockqty": "16",
+      "img": "assets/img/product/product8.jpg"
+    },
+    {
+      "ProductName": "Unpaired gray",
+      "SKU": "PT006",
+      "Category": "Shoes",
+      "isSelected": false,
+      "Brand": "Adidas",
+      "Soldamount": "100.00",
+      "Soldqty": "3",
+      "Instockqty": "50",
+      "img": "assets/img/product/product6.jpg"
+    },
+    {
+      "ProductName": "Avocat",
+      "SKU": "PT007",
+      "Category": "Fruits",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "5.00",
+      "Soldqty": "5",
+      "Instockqty": "29",
+      "img": "assets/img/product/product7.jpg"
+    },
+    {
+      "ProductName": "Banana",
+      "SKU": "PT008",
+      "Category": "Fruits",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "10.00",
+      "Soldqty": "1",
+      "Instockqty": "24",
+      "img": "assets/img/product/product8.jpg"
+    },
+    {
+      "ProductName": "Earphones",
+      "SKU": "PT009",
+      "Category": "Computers",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "15.00",
+      "Soldqty": "2",
+      "Instockqty": "11",
+      "img": "assets/img/product/product9.jpg"
+    },
+    {
+      "ProductName": "Banana",
+      "SKU": "PT010",
+      "Category": "Health Care",
+      "isSelected": false,
+      "Brand": "N/D",
+      "Soldamount": "5.00",
+      "Soldqty": "5",
+      "Instockqty": "16",
+      "img": "assets/img/product/product8.jpg"
+    }
+  ],
+  "totalData": 15
+}

@@ -1,0 +1,74 @@
+<!-- Sidebar -->
+<div class="sidebar sidebar-four" id="sidebar">
+  <div class="sidebar-inner slimscroll">
+    <perfect-scrollbar>
+      <div id="sidebar-menu" class="sidebar-menu sidebar-menu-three">
+        <aside id="aside" class="ui-aside">
+          <ul class="tab nav nav-tabs" id="myTab" role="tablist">
+            <ng-container *ngFor="let mainTittle of sidebarData">
+              <li class="nav-item" role="presentation">
+                <a
+                  class="tablinks nav-link"
+                  (click)="showMenu(mainTittle.tittle)"
+                  [class.active]="opendSubMenu[0] === mainTittle.tittle"
+                >
+                  <img [src]="mainTittle.icon" alt="icon" />
+                </a>
+              </li>
+            </ng-container>
+          </ul>
+        </aside>
+        <div class="tab-content tab-content-four pt-2">
+          <ng-container *ngFor="let mainTittle of sidebarData">
+            <ul
+              class="tab-pane"
+              [class.active]="opendSubMenu[0] === mainTittle.tittle"
+            >
+              <ng-container *ngFor="let mainMenus of mainTittle.subRoutes">
+                <li *ngIf="mainMenus.hasSubRoute == false">
+                  <a
+                    [routerLink]="mainMenus.route"
+                    [class.active]="mainMenus.activeRoute == activePath"
+                    ><span> {{ mainMenus.tittle }}</span>
+                  </a>
+                </li>
+
+                <li class="submenu" *ngIf="mainMenus.hasSubRoute == true">
+                  <a
+                    [ngClass]="{
+                      active: activePath === mainMenus.activeRoute,
+                      subdrop: opendSubMenu[1] === mainMenus.tittle
+                    }"
+                    (click)="showSubMenu(mainMenus.tittle)"
+                    ><span> {{ mainMenus.tittle }}</span>
+                    <span class="menu-arrow"></span
+                  ></a>
+
+                  <ul
+                    [ngClass]="{
+                      show: opendSubMenu[1] == mainMenus.tittle,
+                      hide: opendSubMenu[1] != mainMenus.tittle
+                    }"
+                  >
+                    <ng-container
+                      *ngFor="let subDropMenus of mainMenus.subRoutes"
+                    >
+                      <li>
+                        <a
+                          [routerLink]="subDropMenus.route"
+                          routerLinkActive="active"
+                          >{{ subDropMenus.tittle }}</a
+                        >
+                      </li>
+                    </ng-container>
+                  </ul>
+                </li>
+              </ng-container>
+            </ul>
+          </ng-container>
+        </div>
+      </div>
+    </perfect-scrollbar>
+  </div>
+</div>
+<!-- /Sidebar -->

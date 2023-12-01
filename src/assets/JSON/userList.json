@@ -1,0 +1,131 @@
+{
+  "data": [
+    {
+      "Username": "Thomas",
+      "Phone": "+12163547758",
+      "email": "thomas@example.com",
+      "isSelected": false,
+      "Role": "Admin",
+      "CreatedOn": "3/15/2022",
+      "Status": "Active"
+    },
+    {
+      "Username": "504Benjamin",
+      "Phone": "123-456-888",
+      "email": "customer@example.com",
+      "isSelected": false,
+      "Role": "Manager",
+      "CreatedOn": "2/27/2022",
+      "Status": "Restricted"
+    },
+    {
+      "Username": "James 524",
+      "Phone": "+12163547758",
+      "email": "james@example.com",
+      "isSelected": false,
+      "Role": "Salesman",
+      "CreatedOn": "2/27/2022",
+      "Status": "Restricted"
+    },
+    {
+      "Username": "James 524",
+      "Phone": "+12163547758",
+      "email": "james@example.com",
+      "isSelected": false,
+      "Role": "Salesman",
+      "CreatedOn": "2/27/2022",
+      "Status": "Restricted"
+    },
+    {
+      "Username": "Bruklin2022",
+      "Phone": "123-456-888",
+      "email": "bruklin@example.com",
+      "isSelected": false,
+      "Role": "Delivery Biker",
+      "CreatedOn": "2/27/2022",
+      "Status": "Active"
+    },
+    {
+      "Username": "BeverlyWIN25",
+      "Phone": "+12163547758",
+      "email": "bruklin@example.com",
+      "isSelected": false,
+      "Role": "Delivery Biker",
+      "CreatedOn": "2/27/2022",
+      "Status": "Active"
+    },
+    {
+      "Username": "BHR256",
+      "Phone": "123-456-888",
+      "email": "Huber@example.com",
+      "isSelected": false,
+      "Role": "Sales Executive",
+      "CreatedOn": "3/15/2022",
+      "Status": "Active"
+    },
+    {
+      "Username": "Thomas",
+      "Phone": "+12163547758",
+      "email": "thomas@example.com",
+      "isSelected": false,
+      "Role": "Admin",
+      "CreatedOn": "3/15/2022",
+      "Status": "Active"
+    },
+    {
+      "Username": "504Benjamin",
+      "Phone": "123-456-888",
+      "email": "customer@example.com",
+      "isSelected": false,
+      "Role": "Manager",
+      "CreatedOn": "2/27/2022",
+      "Status": "Restricted"
+    },
+    {
+      "Username": "James 524",
+      "Phone": "+12163547758",
+      "email": "james@example.com",
+      "isSelected": false,
+      "Role": "Salesman",
+      "CreatedOn": "2/27/2022",
+      "Status": "Restricted"
+    },
+    {
+      "Username": "James 524",
+      "Phone": "+12163547758",
+      "email": "james@example.com",
+      "isSelected": false,
+      "Role": "Salesman",
+      "CreatedOn": "2/27/2022",
+      "Status": "Restricted"
+    },
+    {
+      "Username": "Bruklin2022",
+      "Phone": "123-456-888",
+      "email": "bruklin@example.com",
+      "isSelected": false,
+      "Role": "Delivery Biker",
+      "CreatedOn": "2/27/2022",
+      "Status": "Active"
+    },
+    {
+      "Username": "BHR256",
+      "Phone": "123-456-888",
+      "email": "Huber@example.com",
+      "isSelected": false,
+      "Role": "Sales Executive",
+      "CreatedOn": "3/15/2022",
+      "Status": "Active"
+    },
+    {
+      "Username": "BeverlyWIN25",
+      "Phone": "+12163547758",
+      "email": "bruklin@example.com",
+      "isSelected": false,
+      "Role": "Delivery Biker",
+      "CreatedOn": "2/27/2022",
+      "Status": "Active"
+    }
+  ],
+  "totalData": 14
+}

@@ -1,0 +1,92 @@
+<div class="cardhead">
+
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="page-title">Tooltip</h3>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="routes.dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Tooltip</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Header -->
+
+    <div class="row">
+        <!-- Tooltip -->
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Html Element</h5>
+                </div>
+                <div class="card-body">
+                    <div class="popover-list">
+                        <button type="button" class="example-popover btn btn-primary" tooltip="I will hide on click"
+                            triggers="mouseenter:click">
+                            Hover over me!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Tooltip -->
+
+        <!-- Popover -->
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Direction Tooltip</h5>
+                </div>
+                <div class="card-body">
+                    <div class="tooltip-list">
+                        <button type="button" class="btn btn-primary me-1"
+                            tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." placement="top">
+                            Tooltip on top
+                        </button>
+                        <button type="button" class="btn btn-primary me-1"
+                            tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." placement="right">
+                            Tooltip on right
+                        </button>
+                        <button type="button" class="btn btn-primary me-1"
+                            tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." placement="bottom">
+                            Tooltip on bottom
+                        </button>
+                        <button type="button" class="btn btn-primary me-1"
+                            tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." placement="left">
+                            Tooltip on left
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Popover -->
+
+        <!-- Tooltip -->
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Html Element</h5>
+                </div>
+                <div class="card-body">
+                    <div class="popover-list">
+                        <ng-template #popTemplate>
+                            Here we go:
+                        </ng-template>
+                        <button type="button" class="btn btn-primary me-1" [tooltip]="popTemplate">
+                            Tooltip with HTML
+                        </button>
+                        <button type="button" class="btn btn-primary" tooltip="I will hide on click" triggers="click">
+                            Click on me!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Tooltip -->
+    </div>
+
+
+</div>

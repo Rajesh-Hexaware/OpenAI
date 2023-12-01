@@ -1,0 +1,133 @@
+<div class="account-content">
+  <div class="login-wrapper">
+    <div class="login-content">
+      <div class="login-userset">
+        <div class="login-logo logo-normal">
+          <img src="assets/img/logo.png" alt="img" />
+        </div>
+        <a [routerLink]="routes.dashboard" class="login-logo logo-white">
+          <img src="assets/img/logo-white.png" alt="" />
+        </a>
+        <div class="login-userheading">
+          <h3>Create an Account</h3>
+          <h4>Continue where you left off</h4>
+        </div>
+        <form>
+          <div class="form-login">
+            <label>Full Name</label>
+            <div class="form-addons">
+              <input
+                type="text"
+                placeholder="Enter your full name"
+                formControlName="email"
+              />
+              <img src="assets/img/icons/users1.svg" alt="img" />
+            </div>
+          </div>
+          <div class="form-login">
+            <label>Email</label>
+            <div class="form-addons">
+              <input
+                type="text"
+                placeholder="Enter your email address"
+                id="email"
+                [ngClass]="{
+                  'is-invalid': f['email'].touched && f['email'].invalid
+                }"
+              />
+              <img src="assets/img/icons/mail.svg" alt="img" />
+            </div>
+            <div
+              *ngIf="f['email'].touched && f['email'].invalid"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                Email is required.
+              </div>
+            </div>
+            <div *ngIf="CustomControler != 0" class="invalid-feedback">
+              {{ CustomControler }}
+            </div>
+          </div>
+          <div class="form-login">
+            <label>Password</label>
+            <div class="pass-group">
+              <input
+                [type]="password"
+                class="pass-input"
+                placeholder="Enter your password"
+                formControlName="password"
+                id="password"
+                [ngClass]="{
+                  'is-invalid': f['password'].touched && f['password'].invalid
+                }"
+              />
+              <span
+                class="fas toggle-password fa-eye"
+                (click)="onClick()"
+                *ngIf="show"
+              ></span>
+              <span
+                class="fas toggle-password fa-eye-slash"
+                (click)="onClick()"
+                *ngIf="!show"
+              ></span>
+            </div>
+            <div
+              *ngIf="f['password'].touched && f['password'].invalid"
+              class="invalid-feedback"
+            >
+              <div
+                *ngIf="f['password'].errors && f['password'].errors['required']"
+              >
+                Password is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-login">
+            <a class="btn btn-login" [routerLink]="routes.signUp" type="submit"
+              >Sign Up</a
+            >
+          </div>
+        </form>
+
+        <div class="signinform text-center">
+          <h4>
+            Already a user?
+            <a [routerLink]="routes.signIn" class="hover-a">Sign In</a>
+          </h4>
+        </div>
+        <div class="form-setlogin">
+          <h4>Or sign up with</h4>
+        </div>
+        <div class="form-sociallink">
+          <ul>
+            <li>
+              <a href="javascript:void(0);">
+                <img
+                  src="assets/img/icons/google.png"
+                  class="me-2"
+                  alt="google"
+                />
+                Sign Up using Google
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0);">
+                <img
+                  src="assets/img/icons/facebook.png"
+                  class="me-2"
+                  alt="google"
+                />
+                Sign Up using Facebook
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="login-img">
+      <img src="assets/img/login.jpg" alt="img" />
+    </div>
+  </div>
+</div>

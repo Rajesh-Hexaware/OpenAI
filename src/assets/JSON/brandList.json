@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "Image": "assets/img/brand/adidas.png",
+      "BrandName": "Adidas",
+      "BrandDescription": "Shoes, sportswear",
+      "isSelected": false
+    },
+    {
+      "Image": "assets/img/brand/colgate.png",
+      "BrandName": "Colgate",
+      "BrandDescription": "Oral hygiene. Toothbrushes",
+      "isSelected": false
+    },
+    {
+      "Image": "assets/img/brand/samsung.png",
+      "BrandName": "samsung",
+      "BrandDescription": "Electronics",
+      "isSelected": false
+    }
+  ],
+  "totalData": 3
+}
