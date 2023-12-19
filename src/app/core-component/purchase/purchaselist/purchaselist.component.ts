@@ -27,7 +27,26 @@ export class PurchaselistComponent implements OnInit {
   public totalData: any = 0;
   showFilter: boolean = false;
   dataSource!: MatTableDataSource<any>;
-  public searchDataValue = '';
+  public searchDataValue = ''; contentStep=1;
+  contentStepfordesign: number = 1;
+ 
+ setCurrentStep(step: number): void {
+   this.contentStep = step;
+ }
+ setCurrentStepfordesign(step: number): void{
+   this.contentStepfordesign = step; 
+ }
+   copyTextToClipboard(text: string): void {
+     const textarea = document.createElement('textarea');
+     textarea.value = text;
+     document.body.appendChild(textarea);
+     textarea.select();
+     document.execCommand('copy');
+     document.body.removeChild(textarea);  
+   }
+   onSubmit(){
+     
+   }
   //** / pagination variables
   constructor(
     private data: DataService,

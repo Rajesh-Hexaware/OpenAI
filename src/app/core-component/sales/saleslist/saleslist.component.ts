@@ -20,7 +20,8 @@ export class SaleslistComponent implements OnInit {
   initChecked: boolean = false;
   public tableData: Array<any> = [];
   public dataTable: any = [];
-
+  contentStep=1;
+  contentStepfordesign: number = 1;
   public routes = routes;
   // pagination variables
   public pageSize: number = 10;
@@ -54,7 +55,13 @@ export class SaleslistComponent implements OnInit {
   confirmModal(index: any) {}
   date = new Date();
   ngOnInit(): void {}
-
+  setCurrentStep(step: number): void {
+    this.contentStep = step;
+  }
+  setCurrentStepfordesign(step: number): void{
+    this.contentStepfordesign = step; 
+  }
+  
   private getTableData(pageOption: pageSelection): void {
     this.data.getSalesList().subscribe((apiRes: apiResultFormat) => {
       this.tableData = [];
@@ -107,5 +114,17 @@ export class SaleslistComponent implements OnInit {
         f.isSelected = false;
       });
     }
+  }
+
+  copyTextToClipboard(text: string): void {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);  
+  }
+  onSubmit(){
+    
   }
 }

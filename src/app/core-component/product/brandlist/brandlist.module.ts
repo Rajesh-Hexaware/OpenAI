@@ -6,9 +6,10 @@ import { BrandlistComponent } from './brandlist.component';
 
 
 import { sharedModule } from 'src/app/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [BrandlistComponent],
-  imports: [CommonModule, BrandlistRoutingModule, sharedModule],
+  imports: [CommonModule, BrandlistRoutingModule, sharedModule,ReactiveFormsModule],
 })
 export class BrandlistModule {}

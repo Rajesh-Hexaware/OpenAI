@@ -12,8 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CustomPaginationModule } from './custom-pagination/custom-pagination.module';
 import { FullCalendarModule } from '@fullcalendar/angular';
-
-
+import { NgxEditorModule } from 'ngx-editor';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import {
   PerfectScrollbarConfigInterface,
   PerfectScrollbarModule,
@@ -23,7 +23,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NgChartsModule } from 'ng2-charts';
 import { NgxMaskModule } from 'ngx-mask';
-
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -47,6 +46,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     }),
     NgChartsModule.forRoot(),
     FullCalendarModule,
+    NgxEditorModule,
+    CKEditorModule,
 
   ],
   exports: [
@@ -64,8 +65,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     DragDropModule,
     AngularEditorModule,
     NgChartsModule,
-    FullCalendarModule
-    
+    FullCalendarModule,
+    NgxEditorModule,
+    CKEditorModule
   ],
   providers: [
     DataService,

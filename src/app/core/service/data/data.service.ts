@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -289,5 +289,14 @@ export class DataService {
         return res;
       })
     );
+  }
+
+  private jsonDataSubject = new BehaviorSubject<any>(null); 
+  updateData(newData: any): void {
+    this.jsonDataSubject.next(newData);
+  }
+
+  getData(): BehaviorSubject<any> {
+    return this.jsonDataSubject;
   }
 }

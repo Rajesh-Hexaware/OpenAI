@@ -19,6 +19,8 @@ export class SalesreturnlistsComponent implements OnInit {
   showFilter: boolean = false;
   dataSource!: MatTableDataSource<any>;
   public searchDataValue = '';
+  contentStep=1;
+  contentStepfordesign: number = 1; 
   //** / pagination variables
   constructor(private data: DataService, private sweetalert: SweetalertService) {
     this.data.getSalesReturnList().subscribe((res: any) => {
@@ -45,4 +47,22 @@ export class SalesreturnlistsComponent implements OnInit {
       });
     }
   }
+
+  setCurrentStep(step: number): void {
+    this.contentStep = step;
+  }
+  setCurrentStepfordesign(step: number): void{
+    this.contentStepfordesign = step; 
+  }
+    copyTextToClipboard(text: string): void {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);  
+    }
+    onSubmit(){
+      
+    }
 }

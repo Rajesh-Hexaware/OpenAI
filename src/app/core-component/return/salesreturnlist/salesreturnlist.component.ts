@@ -28,6 +28,9 @@ export class SalesreturnlistComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
   public searchDataValue = '';
   //** / pagination variables
+  contentStep=1;
+  contentStepfordesign: number = 1; 
+
   constructor(
     private data: DataService,
     private pagination: PaginationService,
@@ -100,4 +103,22 @@ export class SalesreturnlistComponent implements OnInit {
       });
     }
   }
+
+  setCurrentStep(step: number): void {
+    this.contentStep = step;
+  }
+  setCurrentStepfordesign(step: number): void{
+    this.contentStepfordesign = step; 
+  }
+    copyTextToClipboard(text: string): void {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);  
+    }
+    onSubmit(){
+      
+    }
 }

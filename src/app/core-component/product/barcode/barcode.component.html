@@ -1,64 +1,188 @@
 
-        <div class="page-header">
-            <div class="page-title">
-                <h4>Print Barcode</h4>
-                <h6>Print product barcodes</h6>
-            </div>
+<div class="page-header">
+    <div class="page-title">
+      <h4>Customer Service <span>(How will you handle customer inquiries and issues on the Amazon platform?)</span></h4>
+      <h6>Analyze competitors' customer service practices to set benchmarks</h6>
+    </div>
+  </div>
+  <!-- /add -->
+  <div class="row">
+  <div class="card col-8">
+    <div class="card-body">
+      <div class="row form-section">
+        <div class="col-lg-3 col-sm-6 col-12 section">
+          <div class="form-group">
+            <!-- <h5>Product Attributes</h5> -->
+            <label>Timely Response,
+              Clear and Concise Communication,
+              Utilize Amazon Messaging System,
+              Customer-Focused Language</label>
+            <textarea name="Text1" cols="50" rows="2"></textarea>
+          </div>
         </div>
-        <!-- /add -->
-        <div class="card">
+        <div class="col-lg-3 col-sm-6 col-12 section">
+          <div class="form-group">
+            <!-- <h5>Consumer Value</h5> -->
+            <label>Resolution Offering,
+              Product Information and Policies,
+              Returns and Refunds Process,
+              Handle Negative Feedback Professionally</label>
+            <textarea name="Text1" cols="50" rows="2"></textarea>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12 section">
+          <div class="form-group">
+            <!-- <h5>Brand Identity</h5> -->
+            <label>Use Templates Wisely,
+              Provide Tracking Information,
+              Monitor Customer Metrics</label>
+            <textarea name="Text1" cols="50" rows="2"></textarea>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12 section">
+          <div class="form-group">
+            <!-- <h5>Presentation and Packaging</h5> -->
+            <label>Escalate Issues When Necessary,
+              Stay Informed About Policies</label>
+            <textarea name="Text1" cols="50" rows="2"></textarea>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12 section">
+          <div class="form-group">
+            <!-- <h5>Presentation and Packaging</h5> -->
+            <label>Continuous Improvement</label>
+            <textarea name="Text1" cols="50" rows="2"></textarea>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12 section">
+          <div class="form-group">
+            <!-- <h5>Strategic Collaborations</h5> -->
+            <label>Additional Information</label>
+            <textarea name="Text1" cols="50" rows="2"></textarea>
+          </div>
+        </div>
+        <div class="col-lg-12" style="margin-bottom: 18px;margin-top: 15px; text-align: end;">
+        
+          <button type="button" [routerLink]="routes.addProduct" class="btn btn-primary ml-2" style="margin-left:2rem"
+            (click)="onSubmit()">Next</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="card col-md-4">
+    <div class="card-body">
+      <div class="card-header">
+        <ul class="nav">
+          <li class="nav-item">
+            <button>
+            <a class="nav-link ai_writer" [class.active]="contentStep === 1" (click)="setCurrentStep(1)">Ai Writer</a>
+          </button>
+          </li>
+          <li class="nav-item">
+            <button>
+            <a class="nav-link ai_writer" [class.active]="contentStep === 2" (click)="setCurrentStep(2)">History</a>
+          </button>
+          </li>
+        </ul>
+      </div>
+      <hr class="my-1">
+      <div class="card-body">
+        <div *ngIf="contentStep === 1">
+          <h5 class="card-title">What do you want to generate?</h5>
+          <div class="list-group">
+            <a href="#" class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14"
+                viewBox="0 0 448 512">
+                <path
+                  d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM96 136c0-13.3 10.7-24 24-24c137 0 248 111 248 248c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-110.5-89.5-200-200-200c-13.3 0-24-10.7-24-24zm0 96c0-13.3 10.7-24 24-24c83.9 0 152 68.1 152 152c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-57.4-46.6-104-104-104c-13.3 0-24-10.7-24-24zm0 120a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+              </svg><b class="card-title" style="margin-left: 13px;">Blog Ideas</b>
+              <p class="card-text" style="margin-left: 27px;">Write a Facebook post about openai that
+                revolutionizes......</p>
+            </a>
+            <a href="#" class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"
+                viewBox="0 0 512 512">
+                <path
+                  d="M192 32c0 17.7 14.3 32 32 32c123.7 0 224 100.3 224 224c0 17.7 14.3 32 32 32s32-14.3 32-32C512 128.9 383.1 0 224 0c-17.7 0-32 14.3-32 32zm0 96c0 17.7 14.3 32 32 32c70.7 0 128 57.3 128 128c0 17.7 14.3 32 32 32s32-14.3 32-32c0-106-86-192-192-192c-17.7 0-32 14.3-32 32zM96 144c0-26.5-21.5-48-48-48S0 117.5 0 144V368c0 79.5 64.5 144 144 144s144-64.5 144-144s-64.5-144-144-144H128v96h16c26.5 0 48 21.5 48 48s-21.5 48-48 48s-48-21.5-48-48V144z" />
+              </svg><b class="card-title" style="margin-left: 13px;">Blog Post Outline</b>
+              <p class="card-text" style="margin-left: 27px;">Write a Facebook post about openai that
+                revolutionizes......</p>
+            </a>
+            <a href="#" class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"
+                viewBox="0 0 512 512">
+                <path
+                  d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
+              </svg><b class="card-title" style="margin-left: 13px;">Social Media Post</b>
+              <p class="card-text" style="margin-left: 27px;">Write a Facebook post about openai that
+                revolutionizes......</p>
+            </a>
+          </div>
+        </div>
+        <div *ngIf="contentStep === 2">
+          <div class="card social_card">
             <div class="card-body">
-                <div class="requiredfield">
-                    <h4>The field labels marked with * are required input fields.</h4>
-                </div>
-                <div class="form-group">
-                    <label>Product Name</label>
-                    <div class="input-groupicon">
-                        <input type="text"  placeholder="Please type product code and select...">
-                        <div class="addonset">
-                            <img src="assets/img/icons/scanners.svg" alt="img">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="table-responsive table-height">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>SKU</th>
-                                <th>Qty</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr  *ngFor="let products of tableData; let i=index">
-                                <td>{{products.Name}}</td>
-                                <td>{{products.SKU}}</td>
-                                <td>{{products.Qty}}</td>
-                                <td class="text-end">
-                                    <a (click)="delete(i)" class="delete-set"><img src="assets/img/icons/delete.svg" alt="img"></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-<custom-pagination></custom-pagination>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="form-group">
-                            <label>Paper Size</label>
-                            <select class="form-select">
-                                <option>36mm (1.4 inch)</option>
-                                <option>12mm (1 inch)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-                        <a href="javascript:void(0);"  class="btn btn-cancel">Cancel</a>
-                    </div>
-                </div>
+              <button class="social_button"> <i class="fas fa-pen"></i><span class="ml-2">Social Media Post</span> </button><span class="copy-symbol ml-4"
+              (click)="copyTextToClipboard('Your text to copy')">📋</span>
+              <p class="card-text">Hey everyone! Have you met ChatGPT? As an AI language model, I'm trained to
+                answer your questions and have a conversation with you! Ask me anything, and let's get chatting! 😊
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Date: January 1, 2023</small>
+              </div>
             </div>
+          </div>
+          <div class="card social_card">
+            <div class="card-body">
+              <button class="social_button"><i class="fas fa-pen"></i><span class="ml-2">Social Media Post</span> </button><span class="copy-symbol ml-4"
+              (click)="copyTextToClipboard('Your text to copy')">📋</span>
+              <p class="card-text">Hey everyone! Have you met ChatGPT? As an AI language model, I'm trained to
+                answer your questions and have a conversation with you! Ask me anything, and let's get chatting! 😊
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Date: January 1, 2023</small>
+              </div>
+            </div>
+          </div>  
+          <div class="card social_card">
+            <div class="card-body">
+              <button class="social_button"><i class="fas fa-pen"></i> <span class="ml-2">Social Media Post</span> </button><span class="copy-symbol ml-4"
+              (click)="copyTextToClipboard('Your text to copy')">📋</span>
+              <p class="card-text">Hey everyone! Have you met ChatGPT? As an AI language model, I'm trained to
+                answer your questions and have a conversation with you! Ask me anything, and let's get chatting! 😊
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Date: January 1, 2023</small>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- /add -->
+      </div>
+    </div>
+    <hr class="my-1">
+    <div class="card-body">
+      <div class="box">
+        <h5 class="card-title">Choose a conversation style</h5>
+        <ul class="nav">
+          <li class="nav-item">
+            <button>
+            <a class="nav-link design_button" [class.active]="contentStepfordesign === 1" (click)="setCurrentStepfordesign(1)">More <br>Creative</a>
+          </button>
+          </li>
+          <li class="nav-item">
+            <button>
+            <a class="nav-link design_button" [class.active]="contentStepfordesign === 2" (click)="setCurrentStepfordesign(2)">More <br>Balance</a>
+          </button>
+          </li>
+          <li class="nav-item">
+            <button>
+            <a class="nav-link design_button" [class.active]="contentStepfordesign === 3" (click)="setCurrentStepfordesign(3)">More <br>Precise</a>
+          </button>
+          </li>
+        </ul>
+      </div> 
+      <hr class="my-1">
+      <h5 class="card-title">Preview</h5>
+      <p class="card-text">This is generated Text From Your Response</p>
+    </div>
+</div>
+</div>
+  <!-- /add -->
+  

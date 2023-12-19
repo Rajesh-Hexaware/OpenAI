@@ -1,183 +1,189 @@
+
 <div class="page-header">
   <div class="page-title">
-    <h4>Product Category list</h4>
-    <h6>View/Search product Category</h6>
-  </div>
-  <div class="page-btn">
-    <a [routerLink]="routes.addCategory" class="btn btn-added">
-      <img src="assets/img/icons/plus.svg" class="me-1" alt="img" />Add Category
-    </a>
+    <h4>Target Audience <span>(Who is your target audience, and how do you plan to reach them on Amazon?)</span></h4>
+    <h6>Compare target demographics with competitors to understand market saturation</h6>
   </div>
 </div>
-
-<div class="card">
+<!-- /add -->
+<div class="row">
+<div class="card col-8">
   <div class="card-body">
-    <div class="table-top">
-      <div class="search-set">
-        <div class="search-path">
-          <a
-            (click)="showFilter = !showFilter"
-            [class.setclose]="showFilter == true"
-            class="btn btn-filter"
-            id="filter_search"
-          >
-            <img
-              *ngIf="showFilter == false"
-              src="assets/img/icons/filter.svg"
-              alt="img"
-            />
-            <span
-              ><img
-                *ngIf="showFilter == true"
-                src="assets/img/icons/filter.svg"
-                alt="img"
-            /></span>
+    <div class="row form-section">
+      <div class="col-lg-3 col-sm-6 col-12 section">
+        <div class="form-group">
+          <!-- <h5>Product Attributes</h5> -->
+          <label>Demographics,
+            Occupation and Income,
+            Education,
+            Family Structure,
+            Geographic Location</label>
+          <textarea name="Text1" cols="50" rows="2"></textarea>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-12 section">
+        <div class="form-group">
+          <!-- <h5>Consumer Value</h5> -->
+          <label>Interests and Hobbies,
+            Values and Beliefs,
+            Lifestyle,
+            Online Behavior,
+            Tech Adoption</label>
+          <textarea name="Text1" cols="50" rows="2"></textarea>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-12 section">
+        <div class="form-group">
+          <!-- <h5>Brand Identity</h5> -->
+          <label>Brand Preferences,
+            Communication Preferences,
+            Buying Motivations</label>
+          <textarea name="Text1" cols="50" rows="2"></textarea>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-12 section">
+        <div class="form-group">
+          <!-- <h5>Presentation and Packaging</h5> -->
+          <label>Challenges</label>
+          <textarea name="Text1" cols="50" rows="2"></textarea>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-12 section">
+        <div class="form-group">
+          <!-- <h5>Presentation and Packaging</h5> -->
+          <label>Pain Points</label>
+          <textarea name="Text1" cols="50" rows="2"></textarea>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-12 section">
+        <div class="form-group">
+          <!-- <h5>Strategic Collaborations</h5> -->
+          <label>Additional Information</label>
+          <textarea name="Text1" cols="50" rows="2"></textarea>
+        </div>
+      </div>
+      <div class="col-lg-12" style="margin-bottom: 18px;margin-top: 15px; text-align: end;">
+      
+        <button type="button" [routerLink]="routes.addProduct" class="btn btn-primary ml-2" style="margin-left:2rem"
+          (click)="onSubmit()">Next</button>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="card col-md-4">
+  <div class="card-body">
+    <div class="card-header">
+      <ul class="nav">
+        <li class="nav-item">
+          <button>
+          <a class="nav-link ai_writer" [class.active]="contentStep === 1" (click)="setCurrentStep(1)">Ai Writer</a>
+        </button>
+        </li>
+        <li class="nav-item">
+          <button>
+          <a class="nav-link ai_writer" [class.active]="contentStep === 2" (click)="setCurrentStep(2)">History</a>
+        </button>
+        </li>
+      </ul>
+    </div>
+    <hr class="my-1">
+    <div class="card-body">
+      <div *ngIf="contentStep === 1">
+        <h5 class="card-title">What do you want to generate?</h5>
+        <div class="list-group">
+          <a href="#" class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14"
+              viewBox="0 0 448 512">
+              <path
+                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM96 136c0-13.3 10.7-24 24-24c137 0 248 111 248 248c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-110.5-89.5-200-200-200c-13.3 0-24-10.7-24-24zm0 96c0-13.3 10.7-24 24-24c83.9 0 152 68.1 152 152c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-57.4-46.6-104-104-104c-13.3 0-24-10.7-24-24zm0 120a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+            </svg><b class="card-title" style="margin-left: 13px;">Blog Ideas</b>
+            <p class="card-text" style="margin-left: 27px;">Write a Facebook post about openai that
+              revolutionizes......</p>
+          </a>
+          <a href="#" class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"
+              viewBox="0 0 512 512">
+              <path
+                d="M192 32c0 17.7 14.3 32 32 32c123.7 0 224 100.3 224 224c0 17.7 14.3 32 32 32s32-14.3 32-32C512 128.9 383.1 0 224 0c-17.7 0-32 14.3-32 32zm0 96c0 17.7 14.3 32 32 32c70.7 0 128 57.3 128 128c0 17.7 14.3 32 32 32s32-14.3 32-32c0-106-86-192-192-192c-17.7 0-32 14.3-32 32zM96 144c0-26.5-21.5-48-48-48S0 117.5 0 144V368c0 79.5 64.5 144 144 144s144-64.5 144-144s-64.5-144-144-144H128v96h16c26.5 0 48 21.5 48 48s-21.5 48-48 48s-48-21.5-48-48V144z" />
+            </svg><b class="card-title" style="margin-left: 13px;">Blog Post Outline</b>
+            <p class="card-text" style="margin-left: 27px;">Write a Facebook post about openai that
+              revolutionizes......</p>
+          </a>
+          <a href="#" class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"
+              viewBox="0 0 512 512">
+              <path
+                d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
+            </svg><b class="card-title" style="margin-left: 13px;">Social Media Post</b>
+            <p class="card-text" style="margin-left: 27px;">Write a Facebook post about openai that
+              revolutionizes......</p>
           </a>
         </div>
-        <div class="search-input">
-          <a class="btn btn-searchset"
-            ><img src="assets/img/icons/search-white.svg" alt="img"
-          /></a>
-          <div class="dataTables_filter">
-            <label>
-              <input
-                [(ngModel)]="searchDataValue"
-                (ngModelChange)="searchData(searchDataValue)"
-                type="search"
-                class="form-control"
-                placeholder="Search..."
-              />
-            </label>
+      </div>
+      <div *ngIf="contentStep === 2">
+        <div class="card social_card">
+          <div class="card-body">
+            <button class="social_button"> <i class="fas fa-pen"></i><span class="ml-2">Social Media Post</span> </button><span class="copy-symbol ml-4"
+            (click)="copyTextToClipboard('Your text to copy')">📋</span>
+            <p class="card-text">Hey everyone! Have you met ChatGPT? As an AI language model, I'm trained to
+              answer your questions and have a conversation with you! Ask me anything, and let's get chatting! 😊
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">Date: January 1, 2023</small>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wordset">
-        <ul>
-          <li>
-            <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"
-              ><img src="assets/img/icons/pdf.svg" alt="img"
-            /></a>
-          </li>
-          <li>
-            <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"
-              ><img src="assets/img/icons/excel.svg" alt="img"
-            /></a>
-          </li>
-          <li>
-            <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"
-              ><img src="assets/img/icons/printer.svg" alt="img"
-            /></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- /Filter -->
-    <div
-      class="card mb-0 border-0"
-      [ngClass]="{
-        'show-sub-menu': showFilter == true,
-        'hide-sub-menu': showFilter == false
-      }"
-    >
-      <div class="card-body pb-0">
-        <div class="row">
-          <div class="col-lg-2 col-sm-6 col-12">
-            <div class="form-group">
-              <select class="form-select">
-                <option>Choose Category</option>
-                <option>Computers</option>
-              </select>
+        <div class="card social_card">
+          <div class="card-body">
+            <button class="social_button"><i class="fas fa-pen"></i><span class="ml-2">Social Media Post</span> </button><span class="copy-symbol ml-4"
+            (click)="copyTextToClipboard('Your text to copy')">📋</span>
+            <p class="card-text">Hey everyone! Have you met ChatGPT? As an AI language model, I'm trained to
+              answer your questions and have a conversation with you! Ask me anything, and let's get chatting! 😊
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">Date: January 1, 2023</small>
             </div>
           </div>
-          <div class="col-lg-2 col-sm-6 col-12">
-            <div class="form-group">
-              <select class="form-select">
-                <option>Choose Sub Category</option>
-                <option>Fruits</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-lg-2 col-sm-6 col-12">
-            <div class="form-group">
-              <select class="form-select">
-                <option>Choose Sub Brand</option>
-                <option>Iphone</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-lg-1 col-sm-6 col-12 ms-auto">
-            <div class="form-group">
-              <a class="btn btn-filters ms-auto"
-                ><img src="assets/img/icons/search-whites.svg" alt="img"
-              /></a>
+        </div>  
+        <div class="card social_card">
+          <div class="card-body">
+            <button class="social_button"><i class="fas fa-pen"></i> <span class="ml-2">Social Media Post</span> </button><span class="copy-symbol ml-4"
+            (click)="copyTextToClipboard('Your text to copy')">📋</span>
+            <p class="card-text">Hey everyone! Have you met ChatGPT? As an AI language model, I'm trained to
+              answer your questions and have a conversation with you! Ask me anything, and let's get chatting! 😊
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">Date: January 1, 2023</small>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- /Filter -->
-    <div class="table-responsive">
-      <table
-        (matSortChange)="sortData($event)"
-        matSort
-        matSortActive="Sno"
-        matSortDirection="asc"
-        matSortDisableClear
-        class="table datanew"
-      >
-        <thead>
-          <tr>
-            <th>
-              <label class="checkboxs" (click)="selectAll(initChecked)">
-                <input type="checkbox" [(ngModel)]="initChecked" />
-                <span class="checkmarks"></span>
-              </label>
-            </th>
-            <th mat-sort-header="Categoryname">Category name</th>
-            <th mat-sort-header="CategoryCode">Category Code</th>
-            <th mat-sort-header="Description">Description</th>
-            <th mat-sort-header="CreatedBy">Created By</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let products of tableData; let i = index">
-            <td>
-              <label class="checkboxs">
-                <input type="checkbox" [(ngModel)]="products.isSelected" />
-                <span class="checkmarks"></span>
-              </label>
-            </td>
-            <td class="productimgname">
-              <a href="javascript:void(0);" class="product-img">
-                <img [src]="products.img" alt="product" />
-              </a>
-              <a href="javascript:void(0);">{{ products.Categoryname }}</a>
-            </td>
-            <td>{{ products.CategoryCode }}</td>
-            <td>{{ products.Description }}</td>
-            <td>{{ products.CreatedBy }}</td>
-            <td>
-              <a class="me-3" [routerLink]="routes.editCategory">
-                <img src="assets/img/icons/edit.svg" alt="img" />
-              </a>
-              <a
-                (click)="deleteBtn()"
-                class="me-3 confirm-text"
-                href="javascript:void(0);"
-              >
-                <img src="assets/img/icons/delete.svg" alt="img" />
-              </a>
-            </td>
-          </tr>
-          <tr *ngIf="tableData.length === 0">
-            <td colspan="12">
-              <h5 class="no-record">No matching records found</h5>
-            </td>
-          </tr>
-        </tbody>
-      </table><custom-pagination></custom-pagination>
     </div>
   </div>
+  <hr class="my-1">
+  <div class="card-body">
+    <div class="box">
+      <h5 class="card-title">Choose a conversation style</h5>
+      <ul class="nav">
+        <li class="nav-item">
+          <button>
+          <a class="nav-link design_button" [class.active]="contentStepfordesign === 1" (click)="setCurrentStepfordesign(1)">More <br>Creative</a>
+        </button>
+        </li>
+        <li class="nav-item">
+          <button>
+          <a class="nav-link design_button" [class.active]="contentStepfordesign === 2" (click)="setCurrentStepfordesign(2)">More <br>Balance</a>
+        </button>
+        </li>
+        <li class="nav-item">
+          <button>
+          <a class="nav-link design_button" [class.active]="contentStepfordesign === 3" (click)="setCurrentStepfordesign(3)">More <br>Precise</a>
+        </button>
+        </li>
+      </ul>
+    </div> 
+    <hr class="my-1">
+    <h5 class="card-title">Preview</h5>
+    <p class="card-text">This is generated Text From Your Response</p>
+  </div>
 </div>
-<!-- /product list -->
+</div>
+
+<!-- /add -->

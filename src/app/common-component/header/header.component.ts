@@ -48,7 +48,8 @@ export class HeaderComponent implements OnInit {
         this.logoPath = 'assets/img/logo-white.png';
       } else {
         this.darkTheme = false;
-        this.logoPath = 'assets/img/logo.png';
+        // this.logoPath = 'assets/img/logo.png';
+        this.logoPath = 'assets/img/dreams.png';
       }
     });
   }

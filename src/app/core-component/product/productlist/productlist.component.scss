@@ -7,3 +7,96 @@
 div.dt-buttons .dt-button {
     display: none !important;
 }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  
+  .col-lg {
+    flex: 0 0 50%; /* 50% width on large screens */
+    max-width: 50%;
+    padding: 0 15px;
+  }
+  
+  .col-sm-6 {
+    flex: 0 0 50%; /* 50% width on small screens */
+    max-width: 50%;
+    padding: 0 15px;
+  }
+  
+  .col-12 {
+    flex: 0 0 100%; /* 100% width on extra-small screens */
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Optional: Style for better dropdown appearance */
+  select:focus {
+    outline: none;
+    border-color: #007bff; /* Example color - you can customize */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Example box shadow - you can customize */
+  }
+
+
+  .list-group a.list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  .nav-link, .copy-symbol{
+    cursor: pointer;;
+  }
+  .social_button{
+    border: 1px solid #e2e2fc;
+    border-radius: 15px;
+    background-color: #e2e2fc;
+    color: #3f3eed;
+  }
+  .social_card{
+    background-color: #f5f5fe;
+  }
+   .nav button  {
+    border: none;
+    background: transparent;
+    color: #3f3eed;
+  }
+  .nav button .active {
+    border-bottom: 2px solid #3f3eed; 
+  }
+  .card .card-header , .card-body {
+    padding: 10px;
+}
+
+.card-header ul{
+  margin:0px 25px 0 25px
+}
+
+.section {
+  width: 50%;
+  float: left;
+}
+
+.form-section {
+  clear: both;
+}
+
+h4 span {
+  font-size: 12px;
+  color: coral;
+  font-family: cursive;
+}
+
+

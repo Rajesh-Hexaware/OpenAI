@@ -1,0 +1,45 @@
+.list-group a.list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  .nav-link, .copy-symbol{
+    cursor: pointer;;
+  }
+  .social_button{
+    border: 1px solid #e2e2fc;
+    border-radius: 15px;
+    background-color: #e2e2fc;
+    color: #3f3eed;
+  }
+  .social_card{
+    background-color: #f5f5fe;
+  }
+   .nav button  {
+    border: none;
+    background: transparent;
+    color: #3f3eed;
+  }
+  .nav button .active {
+    border-bottom: 2px solid #3f3eed; 
+  }
+  .card .card-header , .card-body {
+    padding: 10px;
+}
+
+.card-header ul{
+  margin:0px 25px 0 25px
+}
+
+.section {
+  width: 50%;
+  float: left;
+}
+
+.form-section {
+  clear: both;
+}
+
+h4 span {
+  font-size: 12px;
+  color: coral;
+  font-family: cursive;
+}
