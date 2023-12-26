@@ -18,7 +18,7 @@
             Education,
             Family Structure,
             Geographic Location</label>
-          <textarea name="Text1" cols="50" rows="2"></textarea>
+          <textarea name="Text1"  [(ngModel)]="Demographics" cols="50" rows="9"></textarea>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 col-12 section">
@@ -29,7 +29,7 @@
             Lifestyle,
             Online Behavior,
             Tech Adoption</label>
-          <textarea name="Text1" cols="50" rows="2"></textarea>
+          <textarea name="Text1" [(ngModel)]="Interests" cols="50" rows="9"></textarea>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 col-12 section">
@@ -38,33 +38,33 @@
           <label>Brand Preferences,
             Communication Preferences,
             Buying Motivations</label>
-          <textarea name="Text1" cols="50" rows="2"></textarea>
+          <textarea name="Text1" [(ngModel)]="Brand" cols="50" rows="6"></textarea>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 col-12 section">
         <div class="form-group">
           <!-- <h5>Presentation and Packaging</h5> -->
           <label>Challenges</label>
-          <textarea name="Text1" cols="50" rows="2"></textarea>
+          <textarea name="Text1" [(ngModel)]="Challenges" cols="50" rows="6"></textarea>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 col-12 section">
         <div class="form-group">
           <!-- <h5>Presentation and Packaging</h5> -->
           <label>Pain Points</label>
-          <textarea name="Text1" cols="50" rows="2"></textarea>
+          <textarea name="Text1" [(ngModel)]="Pain" cols="50" rows="6"></textarea>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 col-12 section">
         <div class="form-group">
           <!-- <h5>Strategic Collaborations</h5> -->
           <label>Additional Information</label>
-          <textarea name="Text1" cols="50" rows="2"></textarea>
+          <textarea name="Text1" [(ngModel)]="Additional" cols="50" rows="6"></textarea>
         </div>
       </div>
       <div class="col-lg-12" style="margin-bottom: 18px;margin-top: 15px; text-align: end;">
       
-        <button type="button" [routerLink]="routes.addProduct" class="btn btn-primary ml-2" style="margin-left:2rem"
+        <button type="button" [routerLink]="routes.subCategoryList" class="btn btn-primary ml-2" style="margin-left:2rem"
           (click)="onSubmit()">Next</button>
         </div>
     </div>

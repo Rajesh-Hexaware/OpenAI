@@ -12,6 +12,7 @@ import { PaginationService, tablePageSize } from 'src/app/shared/shared.index';
 import { SweetalertService } from 'src/app/shared/sweetalert/sweetalert.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms';
+import { ObjectDataService } from 'src/app/core/service/data/objectdata.service';
 
 @Component({
   selector: 'app-productlist',
@@ -78,7 +79,8 @@ export class ProductlistComponent implements OnInit {
     private pagination: PaginationService,
     private sweetlalert: SweetalertService,
     private router: Router,
-    private openaiService: OpenaiService,  private formBuilder: FormBuilder
+    private openaiService: OpenaiService,  private formBuilder: FormBuilder,
+    private globalObject:ObjectDataService
   ) {
     this.pagination.tablePageSize.subscribe((res: tablePageSize) => {
       if (this.router.url == this.routes.productList) {
@@ -104,61 +106,7 @@ export class ProductlistComponent implements OnInit {
      password: ['', Validators.required]
    });
   }
-  get f() {
-    return this.productformValue.controls;    
-  }
-  get s() {
-    return this.sectionTwo.controls;
-  }
- 
-  get t() {
-    return this.sectionThree.controls;
-  }
-  generateText(string:any) {    
-    this.openaiService.generateText(string).subscribe(
-      (response:any) => {    
-        debugger  
-        this.generatedText =  response.choices[0].message.content;      
-        this.message = response.choices[0].message.content;
-        console.log(response.choices[0].message.content);
-        console.log(response.choices[0].text);
- 
-      },
-      (error:any) => {
-        console.error('Error:', error);
-      }
-    );
-  }
-  exportToCsv() {  
-    const dataForCsv = [{ message: this.message }];
-    this.openaiService.downloadCsv(dataForCsv, 'exported-file');
-  }
- 
-  nextStep() {
-    this.submitted =true;
- 
-    if (this.currentStep === 1 && this.productformValue.valid) {
-      this.currentStep++;
-    } else if (this.currentStep === 2 && this.sectionTwo.valid) {
-      this.currentStep++;
-    } else if (this.currentStep === 3 && this.sectionThree.valid) {
-      this.currentStep++;
-    }
-    //  if (this.currentStep < this.totalSteps) {
-    //   this.currentStep++;
-    // }
-   
-  }
- 
-  prevStep() {
-    if (this.currentStep > 1) {
-      this.currentStep--;
-    }
-  }
 
-  deleteBtn() {
-    this.sweetlalert.deleteBtn();
-  }
   ngOnInit(): void {}
 
   private getTableData(pageOption: pageSelection): void {
@@ -235,9 +183,9 @@ copyTextToClipboard(text: string): void {
 
 onSubmit(): void {
   const newData = {
-    'industry': this.selectedgeography,
+    'industry': this.selectedIndustry,
     'geography': this.selectedgeography,
   };
-  this.data.updateData(newData);
+  this.globalObject.setData(newData);
 }
 }

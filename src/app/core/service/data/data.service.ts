@@ -6,6 +6,11 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class DataService {
+  private globalObjectSubject = new BehaviorSubject<any>({});
+  globalObject$ = this.globalObjectSubject.asObservable();
+  currentData: any={};
+
+
   constructor(private http: HttpClient) {}
 
   public getCountryList(): Observable<any> {
@@ -289,14 +294,5 @@ export class DataService {
         return res;
       })
     );
-  }
-
-  private jsonDataSubject = new BehaviorSubject<any>(null); 
-  updateData(newData: any): void {
-    this.jsonDataSubject.next(newData);
-  }
-
-  getData(): BehaviorSubject<any> {
-    return this.jsonDataSubject;
   }
 }

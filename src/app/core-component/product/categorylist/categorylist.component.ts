@@ -8,6 +8,7 @@ import {
   pageSelection,
   routes,
 } from 'src/app/core/core.index';
+import { ObjectDataService } from 'src/app/core/service/data/objectdata.service';
 import { PaginationService, tablePageSize } from 'src/app/shared/shared.index';
 import { SweetalertService } from 'src/app/shared/sweetalert/sweetalert.service';
 
@@ -30,12 +31,40 @@ export class CategorylistComponent implements OnInit {
   contentStep=1;
   contentStepfordesign: number = 1;
   //** / pagination variables
+  Demographics: string = `Demographics:
+  
+Occupation and Income:
+  
+Education:
 
+Family Structure:
+
+Geographic Location`;
+Brand: string = `Brand Preferences:
+
+Communication Preferences:
+
+Buying Motivations:`;
+Interests : string = `Interests and Hobbies:
+
+Values and Beliefs:
+
+Lifestyle:
+
+Online Behavior:
+
+Tech Adoption:`;
+Challenges: string = `Challenges:`;
+Pain : string = `Pain Points:`;
+Additional: string = `Additional-Information:`;
+newLine: any =`\n`;
+  receivedData: string;
   constructor(
-    private data: DataService,
+    private data: DataService, 
     private pagination: PaginationService,
     private sweetalert: SweetalertService,
-    private router: Router
+    private router: Router,
+    private globalObject:ObjectDataService
   ) {
     this.pagination.tablePageSize.subscribe((res: tablePageSize) => {
       if (this.router.url == this.routes.categoryList) {
@@ -49,7 +78,11 @@ export class CategorylistComponent implements OnInit {
     this.sweetalert.deleteBtn();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.globalObject.data$.subscribe((data) => {
+      this.Demographics = data;
+    });
+  }
 
   private getTableData(pageOption: pageSelection): void {
     this.data.getCategoryList().subscribe((apiRes: apiResultFormat) => {
@@ -106,7 +139,8 @@ export class CategorylistComponent implements OnInit {
   }
 
   onSubmit(){
-    
+    let gettingString = `${this.Demographics}${this.newLine}${this.Interests}${this.newLine}${this.Pain}${this.newLine}${this.Brand}${this.newLine}${this.Challenges}${this.newLine}${this.Additional}`;
+    this.globalObject.convertToJSON(gettingString);
   }
 
   setCurrentStep(step: number): void {
