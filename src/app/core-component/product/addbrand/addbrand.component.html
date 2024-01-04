@@ -1,43 +1,2175 @@
 <div class="page-header">
-  <div class="page-title">
-    <h4>Brand ADD</h4>
-    <h6>Create new Brand</h6>
-  </div>
+	<div class="page-title">
+		<h4>Product Add</h4>
+		<h6>Create new product</h6>
+	</div>
 </div>
 <!-- /add -->
 <div class="card">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-lg-3 col-sm-6 col-12">
-        <div class="form-group">
-          <label>Brand Name</label>
-          <input type="text" />
-        </div>
-      </div>
-      <div class="col-lg-12">
-        <div class="form-group">
-          <label>Description</label>
-          <textarea class="form-control"></textarea>
-        </div>
-      </div>
-
-      <div class="col-lg-12">
-        <div class="form-group">
-          <label> Product Image</label>
-          <div class="image-upload">
-            <input type="file" />
-            <div class="image-uploads">
-              <img src="assets/img/icons/upload.svg" alt="img" />
-              <h4>Drag and drop a file to upload</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-12">
-        <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-        <a [routerLink]="routes.brandList" class="btn btn-cancel">Cancel</a>
-      </div>
-    </div>
-  </div>
+	<div class="card-header">
+		<ul class="nav nav-tabs">
+			<li class="nav-item" [ngClass]="{ 'active': currentStep === 1 }">
+				<a class="nav-link" (click)="goToStep(1)">Offer</a>
+			</li>
+			<li class="nav-item" [ngClass]="{ 'active': currentStep === 2 }">
+				<a class="nav-link" (click)="goToStep(2)">Keywords</a>
+			</li>
+			<li class="nav-item" [ngClass]="{ 'active': currentStep === 3 }">
+				<a class="nav-link" (click)="goToStep(3)">Images</a>
+			</li>
+			<li class="nav-item" [ngClass]="{ 'active': currentStep === 4 }">
+				<a class="nav-link" (click)="goToStep(4)">Description</a>
+			</li>
+			<li class="nav-item" [ngClass]="{ 'active': currentStep === 5 }">
+				<a class="nav-link" (click)="goToStep(5)">Compliance</a>
+			</li>
+			<li class="nav-item" [ngClass]="{ 'active': currentStep === 6 }">
+				<a class="nav-link" (click)="goToStep(6)">Vital Info</a>
+			</li>
+			<li class="nav-item" [ngClass]="{ 'active': currentStep === 7 }">
+				<a class="nav-link" (click)="goToStep(7)">Variations</a>
+			</li>
+			<li class="nav-item" [ngClass]="{ 'active': currentStep === 8 }">
+				<a class="nav-link" (click)="goToStep(8)">More Details</a>
+			</li>
+			<!-- Add more list items for additional steps -->
+		</ul>
+	</div>
+	<div class="card-body">
+		<div *ngIf="currentStep === 1">
+			<form [formGroup]="productformValue">
+				<div class="row">
+					<div class="form-group">
+						<div class="row">
+							<label for="inputPassword" class="col-sm-3 col-form-label">Product Tax Code <span
+									class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span></label>
+							<div class="col-sm-8">
+								<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+									class="form-control" id="ProductName" name="ProductName"
+									formControlName="ProductName">
+								<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+									<div *ngIf="f['ProductName'].errors['required']">Product Name is required</div>
+									<div *ngIf="f['ProductName'].errors['minlength']">
+										ProductName must be at least 4 characters
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="inputPassword" class="col-sm-3 col-form-label">Shipping Template <span
+									class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span></label>
+							<div class="col-sm-8">
+								<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+									class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+									<option>Choose Shipping</option>
+									<option *ngFor="let unit of unitList">{{unit.name}}</option>
+								</select>
+								<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+									<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="inputPassword" class="col-sm-3 col-form-label">List Price <span
+									class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span> </label>
+							<div class="col-sm-8">
+								<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+									class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+									<option>Choose Price</option>
+									<option *ngFor="let unit of unitList">{{unit.name}}</option>
+								</select>
+								<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+									<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="inputPassword" class="col-sm-3 col-form-label">Max Order Quantity <span
+									class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span></label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="maxorderquantity">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="inputPassword" class="col-sm-3 col-form-label">Handling Time <span
+									class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span></label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="handlingtime">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="inputPassword" class="col-sm-3 col-form-label">Can be Gift Massaged <span
+									class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span></label>
+							<div class="col-sm-8">
+								<!-- <label for="selectedOption">Select an Option:</label> -->
+								<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+									class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+									<option>Choose Massage</option>
+									<option *ngFor="let unit of unitList">{{unit.name}}</option>
+								</select>
+								<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+									<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="inputPassword" class="col-sm-3 col-form-label">Is Gift Wrap Available <span
+									class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span></label>
+							<div class="col-sm-8">
+								<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+									class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+									<option>Choose Gift Wrap</option>
+									<option *ngFor="let unit of unitList">{{unit.name}}</option>
+								</select>
+								<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+									<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="offerStartDate" class="col-sm-3 col-form-label">Offer Start Date <span
+									class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span></label>
+							<div class="col-sm-8">
+								<div class="input-group">
+									<div class="input-groupicon">
+										<ngx-datepicker [(ngModel)]="date"
+											[ngModelOptions]="{standalone: true}"></ngx-datepicker>
+										<div class="addonset">
+											<img src="assets/img/icons/calendars.svg" alt="img" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="restockDate" class="col-sm-3 col-form-label">Restock
+								Date <span class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span></label>
+							<div class="col-sm-8">
+								<div class="input-group">
+									<div class="input-groupicon">
+										<ngx-datepicker [(ngModel)]="date"
+											[ngModelOptions]="{standalone: true}"></ngx-datepicker>
+										<div class="addonset">
+											<img src="assets/img/icons/calendars.svg" alt="img" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="inputPassword" class="col-sm-3 col-form-label">Country/ Region of origin <span
+									class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span></label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="handlingtime">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="inputPassword" class="col-sm-3 col-form-label">HSN Code <span
+									class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span></label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="handlingtime">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="inputPassword" class="col-sm-3 col-form-label">Maximum Retail Price <span
+									class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+										viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+										<path
+											d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+									</svg></span></label>
+							<div class="col-sm-8">
+								<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+									class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+									<option>Choose Retail Price</option>
+									<option *ngFor="let unit of unitList">{{unit.name}}</option>
+								</select>
+								<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+									<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<a (click)="nextStep()" href="javascript:void(0);" class="btn btn-submit me-2">Next</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div *ngIf="currentStep === 2">
+			<h4 class="card-title">Keyword</h4>
+			<form [formGroup]="productformValue">
+				<div class="form-group">
+					<div class="row">
+						<div class="key-content" style="background-color: beige;">
+							<svg xmlns="http://www.w3.org/2000/svg" height="1rem"
+								viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+								<path
+									d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+							</svg>
+							<span class="col-sm-3 col-form-label"> When multiple sellers sell the same product through a
+								single detail page, we combine and present the best product data to ensure customers get
+								the best product data to ensure customers get the best experience.</span>
+							<div class="mt-3">
+								<label class="checkboxs-keyword">
+									<input type="checkbox" [(ngModel)]="initChecked"
+										[ngModelOptions]="{standalone: true}" />
+									<span class="checkmarks"></span> Show content currently live on the detail page
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-2 col-form-label">Search Terms <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="serachtrems">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<a (click)="prevStep()" href="javascript:void(0);" class="btn btn-cancel">Previous</a>
+					<a (click)="nextStep()" href="javascript:void(0);" class="btn btn-submit me-2"
+						style="margin-left: 10px;">Next</a>
+				</div>
+			</form>
+		</div>
+		<div *ngIf="currentStep === 3">
+			<h4 class="card-title">Images</h4>
+			<form [formGroup]="productformValue">
+				<div class="form-group">
+					<div class="row">
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<a (click)="prevStep()" href="javascript:void(0);" class="btn btn-cancel">Previous</a>
+					<a (click)="nextStep()" href="javascript:void(0);" class="btn btn-submit me-2"
+						style="margin-left: 10px;">Next</a>
+				</div>
+			</form>
+		</div>
+		<div *ngIf="currentStep === 4">
+			<h4 class="card-title">Description</h4>
+			<form [formGroup]="productformValue">
+				<div class="form-group">
+					<div class="row">
+						<div class="key-content" style="background-color: beige;">
+							<svg xmlns="http://www.w3.org/2000/svg" height="1rem"
+								viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+								<path
+									d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+							</svg>
+							<span class="col-sm-3 col-form-label"> When multiple sellers sell the same product through a
+								single detail page, we combine and present the best product data to ensure customers get
+								the best product data to ensure customers get the best experience.</span>
+							<div class="mt-3">
+								<label class="checkboxs-keyword">
+									<input type="checkbox" [(ngModel)]="initChecked"
+										[ngModelOptions]="{standalone: true}" />
+									<span class="checkmarks"></span> Show content currently live on the detail page
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-2 col-form-label">Product Description <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<textarea formControlName="description" id="description" class="form-control"
+								[ngClass]="{ 'is-invalid': submitted && f['Description'].errors }"></textarea>
+							<div *ngIf="submitted && f['description'].errors" class="invalid-feedback">
+								<div *ngIf="f['description'].errors['required']">Description is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-2 col-form-label">Bullet Points <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="col-sm-6" *ngFor="let field of getBulletFields().controls; let i=index"
+							[formGroupName]="i" style="margin-left: 172px; margin-bottom: 10px;">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="link">
+							<a id="addQuantity" (click)="addQuantity()" style="color: #FF9F43;">Add
+								More</a><b>|</b><span><a id="removeQuantity" (click)="removeQuantity($event)"
+									style="color: #637381; margin-left: 1px;">Remove Last</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<a (click)="prevStep()" href="javascript:void(0);" class="btn btn-cancel">Previous</a>
+					<a (click)="nextStep()" href="javascript:void(0);" class="btn btn-submit me-2"
+						style="margin-left: 10px;">Next</a>
+				</div>
+			</form>
+		</div>
+		<div *ngIf="currentStep === 5">
+			<h4 class="card-title">Compliance</h4>
+			<form [formGroup]="productformValue">
+				<div class="form-group">
+					<div class="row">
+						<div class="key-content" style="background-color: beige;">
+							<svg xmlns="http://www.w3.org/2000/svg" height="1rem"
+								viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+								<path
+									d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+							</svg>
+							<span class="col-sm-3 col-form-label"> When multiple sellers sell the same product through a
+								single detail page, we combine and present the best product data to ensure customers get
+								the best product data to ensure customers get the best experience.</span>
+							<div class="mt-3">
+								<label class="checkboxs-keyword">
+									<input type="checkbox" [(ngModel)]="initChecked"
+										[ngModelOptions]="{standalone: true}" />
+									<span class="checkmarks"></span> Show content currently live on the detail page
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Battery Composition <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose </option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Battery Type/ Size <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose Shipping</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Number Of Batteries<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="col-sm-6" *ngFor="let field of getBulletFields().controls; let i=index"
+							[formGroupName]="i" style="margin-left: 258px; margin-bottom: 3px;">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="link">
+							<a id="addQuantity" (click)="addQuantity()" style="color: #FF9F43;">Add
+								More</a><b>|</b><span><a id="removeQuantity" (click)="removeQuantity($event)"
+									style="color: #637381; margin-left: 1px;">Remove Last</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Watt hours per battery <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-4">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Battery Name is required</div>
+								<div *ngIf="f['ProductName'].errors['minlength']">
+									Battery must be at least 4 characters
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose Battery</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Lithium Battery Packaging<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose </option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Batteries are Included <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose </option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Is this product a battery or does it
+							use Batteries <span class="svg-question"><svg xmlns="http://www.w3.org/2000/svg"
+									height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose </option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Battery Weight<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-4">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Battery Name is required</div>
+								<div *ngIf="f['ProductName'].errors['minlength']">
+									Battery must be at least 4 characters
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose Battery</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Number Of Lithium Metal Cells<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Metal Name is required</div>
+								<div *ngIf="f['ProductName'].errors['minlength']">
+									Metal must be at least 4 characters
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Number Of Lithium-ion Cells<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Metal Name is required</div>
+								<div *ngIf="f['ProductName'].errors['minlength']">
+									Metal must be at least 4 characters
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Lithium Content<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-4">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Battery Name is required</div>
+								<div *ngIf="f['ProductName'].errors['minlength']">
+									Battery must be at least 4 characters
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose </option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">UN Number <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Metal Name is required</div>
+								<div *ngIf="f['ProductName'].errors['minlength']">
+									Metal must be at least 4 characters
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Safety Data Sheet(SDS) URL<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Battery Name is required</div>
+								<div *ngIf="f['ProductName'].errors['minlength']">
+									Battery must be at least 4 characters
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Flash Point(*C)?<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-4">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Battery Name is required</div>
+								<div *ngIf="f['ProductName'].errors['minlength']">
+									Battery must be at least 4 characters
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose </option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Item Weight<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-4">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Battery Name is required</div>
+								<div *ngIf="f['ProductName'].errors['minlength']">
+									Battery must be at least 4 characters
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose </option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Applicable Dangerous Goods
+							Regulations <span class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose </option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Categorisation/ GHS pictograms(select
+							all that apply)<span class="svg-question"><svg xmlns="http://www.w3.org/2000/svg"
+									height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Choose </option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<a (click)="prevStep()" href="javascript:void(0);" class="btn btn-cancel">Previous</a>
+					<a (click)="nextStep()" href="javascript:void(0);" class="btn btn-submit me-2"
+						style="margin-left: 10px;">Next</a>
+				</div>
+			</form>
+		</div>
+		<div *ngIf="currentStep === 6">
+			<h4 class="card-title">Vital Info</h4>
+			<form [formGroup]="productformValue">
+				<div class="form-group">
+					<div class="row">
+						<div class="key-content" style="background-color: beige;">
+							<svg xmlns="http://www.w3.org/2000/svg" height="1rem"
+								viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+								<path
+									d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+							</svg>
+							<span class="col-sm-3 col-form-label"> When multiple sellers sell the same product through a
+								single detail page, we combine and present the best product data to ensure customers get
+								the best product data to ensure customers get the best experience.</span>
+							<div class="mt-3">
+								<label class="checkboxs-keyword">
+									<input type="checkbox" [(ngModel)]="initChecked"
+										[ngModelOptions]="{standalone: true}" />
+									<span class="checkmarks"></span> Show content currently live on the detail page
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">GleeSpace Girl's T-Shirt</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Item Name (aka Title)<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Metal Name is required</div>
+								<div *ngIf="f['ProductName'].errors['minlength']">
+									Metal must be at least 4 characters
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">GleeSpace</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Brand Name<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Metal Name is required</div>
+								<div *ngIf="f['ProductName'].errors['minlength']">
+									Metal must be at least 4 characters
+								</div>
+							</div>
+							<span>To list your products after your brand is enrolled, enter the brand name exactly as
+								you submitted it for brand approval, and specify a unique value for the Key Attribute
+								that you selected in the brand registry application. You can always edit the product
+								details later in Manage Inventory.</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">GLS_01_Mermaid</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Manufacture Part Number<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Manufacture Part Number is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Size</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Variation Theme<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Variation is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Character</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Style Name<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Style name is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">clothing & Accessories >Girls > Tops,
+							T-Shirts & Shirt > T-Shirts</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Recommended Browser nodes<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Recommended Browser nodes is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Girls</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Gender<span class="svg-question"><svg
+									xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Gender is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Regular Fit</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Fitting Type<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Fitting Type is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">1</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Number Of Items<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Number Of Items is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">100 cotton</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Fabric Type<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Style name is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <span style="margin-left: 270px;">Care instruction: Do not tumble dry, Dry in Shade, Wash in
+							cold water. Machine wash with cold water and <br>wash Light Color T-Shirt Separately with
+							Mild Detergent. Do not Wash in Hot Water. Do Not Bleach
+						</span> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Product care Instructions<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Product care Instructions required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Model Name<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Model name is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Half Sleeve</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Sleeve Type<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Sleeve Type is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Blue</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Color<span class="svg-question"><svg
+									xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Color is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Turquose Blue</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Color Map<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Color is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Cotton</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Material Type<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Cotton is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Material/ Fabric Regulations <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span> </label>
+						<div class="col-sm-8">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Select</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Product Lifecycle Supply Type<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span> </label>
+						<div class="col-sm-8">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Select</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="offerStartDate" class="col-sm-3 col-form-label">Item Booking Date<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<div class="input-group">
+								<div class="input-groupicon">
+									<ngx-datepicker [(ngModel)]="date"
+										[ngModelOptions]="{standalone: true}"></ngx-datepicker>
+									<div class="addonset">
+										<img src="assets/img/icons/calendars.svg" alt="img" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Cuff Style<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Cuff Style is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<a (click)="prevStep()" href="javascript:void(0);" class="btn btn-cancel">Previous</a>
+					<a (click)="nextStep()" href="javascript:void(0);" class="btn btn-submit me-2"
+						style="margin-left: 10px;">Next</a>
+				</div>
+			</form>
+		</div>
+		<div *ngIf="currentStep === 7">
+			<h4 class="card-title">Variations</h4>
+			<form [formGroup]="productformValue">
+				<div class="form-group">
+					<div class="row">
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<a (click)="prevStep()" href="javascript:void(0);" class="btn btn-cancel">Previous</a>
+					<a (click)="nextStep()" href="javascript:void(0);" class="btn btn-submit me-2"
+						style="margin-left: 10px;">Next</a>
+				</div>
+			</form>
+		</div>
+		<div *ngIf="currentStep === 8">
+			<h4 class="card-title">More Details</h4>
+			<form [formGroup]="productformValue">
+				<div class="form-group">
+					<div class="row">
+						<div class="key-content" style="background-color: beige;">
+							<svg xmlns="http://www.w3.org/2000/svg" height="1rem"
+								viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+								<path
+									d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+							</svg>
+							<span class="col-sm-3 col-form-label"> When multiple sellers sell the same product through a
+								single detail page, we combine and present the best product data to ensure customers get
+								the best product data to ensure customers get the best experience.</span>
+							<div class="mt-3">
+								<label class="checkboxs-keyword">
+									<input type="checkbox" [(ngModel)]="initChecked"
+										[ngModelOptions]="{standalone: true}" />
+									<span class="checkmarks"></span> Show content currently live on the detail page
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Closure Type<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Closure Type is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Glespace Apparels Private Limited</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Manufaturer<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Manufaturer is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Model Number<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Model Numberis required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="offerStartDate" class="col-sm-3 col-form-label">Release Date<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<div class="input-group">
+								<div class="input-groupicon">
+									<ngx-datepicker [(ngModel)]="date"
+										[ngModelOptions]="{standalone: true}"></ngx-datepicker>
+									<div class="addonset">
+										<img src="assets/img/icons/calendars.svg" alt="img" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Specific uses for product<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Specific uses required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Import Designation<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Specific uses required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Item Dimensions <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-4">
+							<label for="item-name">Item Lenght 20.00</label>
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Specific uses required
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label for="item-name">Centimeters</label>
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Select</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="display: flex; margin-left: 248px; margin-right: -275px;">
+						<div class="col-sm-4">
+							<label for="item-name">Item Width 10.00</label>
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Specific uses required
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label for="item-name">Centimeters</label>
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Select</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="display: flex; margin-left: 248px; margin-right: -275px;">
+						<div class="col-sm-4">
+							<label for="item-name">Item Height 1.00</label>
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Specific uses required
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label for="item-name">Centimeters</label>
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Select</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Package Dimensions <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-4">
+							<label for="item-name">Package Height 20.00</label>
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Specific uses required
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label for="item-name">Centimeters</label>
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Select</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="display: flex; margin-left: 248px; margin-right: -275px;">
+						<div class="col-sm-4">
+							<label for="item-name">Package Lenght 20.00</label>
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Specific uses required
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label for="item-name">Centimeters</label>
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Select</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="display: flex; margin-left: 248px; margin-right: -275px;">
+						<div class="col-sm-4">
+							<label for="item-name">Package Width 20.00</label>
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Specific uses required
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label for="item-name">Centimeters</label>
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Select</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Package Weight <span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-4">
+							<label for="item-name">0.10</label>
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Specific uses required
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label for="item-name">Kilogram</label>
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Kg</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Unit count<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Unit Count required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Unit Count type<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Unit Count type required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Is Autographed<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span> </label>
+						<div class="col-sm-8">
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Select</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Autographed is required</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Item Type Name<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Item Type Name required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Spring-Summer</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Season<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Season is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Sport Type<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="col-sm-6" *ngFor="let field of getBulletFields().controls; let i=index"
+							[formGroupName]="i" style="margin-left: 258px; margin-bottom: 3px;">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="link">
+							<a id="addQuantity" (click)="addQuantity()" style="color: #FF9F43;">Add
+								More</a><b>|</b><span><a id="removeQuantity" (click)="removeQuantity($event)"
+									style="color: #637381; margin-left: 1px;">Remove Last</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Cotton</label> -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Theme<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Theme is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">						
+						<label for="inputPassword" class="col-sm-3 col-form-label">League Name<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">League is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">						
+						<label for="inputPassword" class="col-sm-3 col-form-label">Special Sizes<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Theme is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Occasion Description<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="col-sm-6" *ngFor="let field of getBulletFields().controls; let i=index"
+							[formGroupName]="i" style="margin-left: 258px; margin-bottom: 3px;">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="link">
+							<a id="addQuantity" (click)="addQuantity()" style="color: #FF9F43;">Add
+								More</a><b>|</b><span><a id="removeQuantity" (click)="removeQuantity($event)"
+									style="color: #637381; margin-left: 1px;">Remove Last</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Life Style<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="col-sm-6" *ngFor="let field of getBulletFields().controls; let i=index"
+							[formGroupName]="i" style="margin-left: 258px; margin-bottom: 3px;">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="link">
+							<a id="addQuantity" (click)="addQuantity()" style="color: #FF9F43;">Add
+								More</a><b>|</b><span><a id="removeQuantity" (click)="removeQuantity($event)"
+									style="color: #637381; margin-left: 1px;">Remove Last</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">						
+						<label for="inputPassword" class="col-sm-3 col-form-label">Team Name<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Team is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">						
+						<label for="inputPassword" class="col-sm-3 col-form-label">Athelete<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Athelete is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">						
+						<label for="inputPassword" class="col-sm-3 col-form-label">Item lenght Description<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">lenght is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">						
+						<label for="inputPassword" class="col-sm-3 col-form-label">Top Style<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Style is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">						
+						<label for="inputPassword" class="col-sm-3 col-form-label">Strap Type<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Strap is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<!-- <label for="item-name" style="margin-left: 17rem;">Round Collar</label>										 -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Collar Style<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Collar is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">						
+						<label for="inputPassword" class="col-sm-3 col-form-label">Fur Description<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Description is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">	
+						<!-- <label for="item-name" style="margin-left: 17rem;">GleeSpace Apparels Pvt.Ltd.</label>						 -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Manufacture Contact<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Contact is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">	
+						<!-- <label for="item-name" style="margin-left: 17rem;">Round Neck</label>						 -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Neck Style<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Neck Style is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">												
+						<label for="inputPassword" class="col-sm-3 col-form-label">Number Of Pockets<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Pockets is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">	
+						<!-- <label for="item-name" style="margin-left: 17rem;">Checkered</label>						 -->
+						<label for="inputPassword" class="col-sm-3 col-form-label">Pattern<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Pattern is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">												
+						<label for="inputPassword" class="col-sm-3 col-form-label">Pocket Description<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Description is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Specil Features<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="col-sm-6" *ngFor="let field of getBulletFields().controls; let i=index"
+							[formGroupName]="i" style="margin-left: 258px; margin-bottom: 3px;">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="link">
+							<a id="addQuantity" (click)="addQuantity()" style="color: #FF9F43;">Add
+								More</a><b>|</b><span><a id="removeQuantity" (click)="removeQuantity($event)"
+									style="color: #637381; margin-left: 1px;">Remove Last</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">												
+						<label for="inputPassword" class="col-sm-3 col-form-label">Wave Type<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Wave is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">												
+						<label for="inputPassword" class="col-sm-3 col-form-label">Packer<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Wave is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Embellishment Feature<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="col-sm-6" *ngFor="let field of getBulletFields().controls; let i=index"
+							[formGroupName]="i" style="margin-left: 258px; margin-bottom: 3px;">
+							<input type="text" class="form-control" id="handlingtime">
+						</div>
+						<div class="link">
+							<a id="addQuantity" (click)="addQuantity()" style="color: #FF9F43;">Add
+								More</a><b>|</b><span><a id="removeQuantity" (click)="removeQuantity($event)"
+									style="color: #637381; margin-left: 1px;">Remove Last</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Duration<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>				
+						<div class="col-sm-4">						
+							<select [ngClass]="{ 'is-invalid': submitted && f['Unit'].errors }"
+								class="form-control form-select" id="Unit" name="Unit" formControlName="Unit">
+								<option>Select</option>
+								<option *ngFor="let unit of unitList">{{unit.name}}</option>
+							</select>
+							<div *ngIf="submitted && f['Unit'].errors" class="invalid-feedback">
+								<div *ngIf="f['Unit'].errors['required']">Unit is required</div>
+							</div>
+						</div>
+						<div class="col-sm-4">							
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Specific uses required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">												
+						<label for="inputPassword" class="col-sm-3 col-form-label">Back Style<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Style is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">												
+						<label for="inputPassword" class="col-sm-3 col-form-label">Character<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Character is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">												
+						<label for="inputPassword" class="col-sm-3 col-form-label">Importer<span
+								class="svg-question"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+									viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<path
+										d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+								</svg></span></label>
+						<div class="col-sm-8">
+							<input type="text" [ngClass]="{ 'is-invalid': submitted && f['ProductName'].errors }"
+								class="form-control" id="ProductName" name="ProductName" formControlName="ProductName">
+							<div *ngIf="submitted && f['ProductName'].errors" class="invalid-feedback">
+								<div *ngIf="f['ProductName'].errors['required']">Importer is required
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<a (click)="prevStep()" href="javascript:void(0);" class="btn btn-cancel">Previous</a>
+					<a (click)="nextStep()" href="javascript:void(0);" class="btn btn-submit me-2"
+						style="margin-left: 10px;">Submit</a>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
 <!-- /add -->

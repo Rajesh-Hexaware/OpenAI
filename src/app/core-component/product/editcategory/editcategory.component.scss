@@ -1,0 +1,91 @@
+.custom-card {
+    margin: 0;
+}
+.card-title{
+    height: 40px;
+}
+.save{
+    border-radius: 18px;
+    width: 96px;
+    background-color: white;
+    margin-left: 10px;
+}
+.save:hover {
+  background-color: #d0d0d0;; /* Set your desired hover background color */
+}
+ul > li {
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+    /* You can also add some margins here to make it look prettier */
+}
+.custom-card-body {
+    display: flex;
+    justify-content: end;
+    margin-top: -50px;
+}
+
+ul > li >a :hover{
+    background-color:#f8f9fa;
+}
+.circle-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .circles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .circle {
+    width: 50px; /* Adjust the size of the circles as needed */
+    height: 50px;
+    border-radius: 50%;
+    background-color:white  ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: black;
+  }
+  
+  .medium {
+    margin-right: 10px; /* Adjust the spacing between circles */
+  }
+  
+  .small {
+    width: 25px; /* Adjust the size of the small circle */
+    height: 25px;   
+    /* background-color:darkgray; */
+   
+  }
+  ul>li.small{
+    margin-left: -18px;
+    margin-top: 20px;
+  }
+  .circle.medium svg {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    border-radius: 50%; /* Ensure the icon is in a circle */
+    background-color: #f0f0f0; /* Optional: Set a background color for the circle */
+    padding: 10px; /* Optional: Add padding for spacing within the circle */
+}
+.form-check {
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+ .footer-menu button {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+    border-radius: 50%;
+    background-color: #fff; /* Adjust the background color as needed */
+    border: 1px solid #ccc; /* Adjust the border color as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  .footer-menu button:hover {
+    background-color: #d0d0d0; /* Background color on hover */
+  }

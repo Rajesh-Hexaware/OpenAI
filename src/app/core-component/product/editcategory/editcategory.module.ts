@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { EditcategoryRoutingModule } from './editcategory-routing.module';
 import { EditcategoryComponent } from './editcategory.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { EditcategoryComponent } from './editcategory.component';
   ],
   imports: [
     CommonModule,
-    EditcategoryRoutingModule
+    EditcategoryRoutingModule,
+    FormsModule
   ]
 })
 export class EditcategoryModule { }

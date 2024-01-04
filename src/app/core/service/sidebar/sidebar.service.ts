@@ -2622,7 +2622,7 @@ export class SidebarService {
           subMenus: [
             {
               menuValue: 'Instagram',
-              route: routes.productList,
+              route: routes.editCategory,
               hasSubRoute: false,
               showSubRoute: false,
               icon: 'box',
@@ -2640,7 +2640,7 @@ export class SidebarService {
             },
             {
               menuValue: 'Twitter',
-              route: routes.addProduct,
+              route: routes.addBrand,
               hasSubRoute: false,
               showSubRoute: false,
               icon: 'plus-square',

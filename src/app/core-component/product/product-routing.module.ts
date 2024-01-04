@@ -9,21 +9,21 @@ const routes: Routes = [
     component: ProductComponent,
     children: [
       {
-        path: 'product-list',
+        path: 'Indusrty',
         loadChildren: () =>
           import('./productlist/productlist.module').then(
             (m) => m.ProductlistModule
           ),
       },
       {
-        path: 'add-product',
+        path: 'Product-Differentiation',
         loadChildren: () =>
           import('./addproduct/addproduct.module').then(
             (m) => m.AddproductModule
           ),
       },
       {
-        path: 'category-list',
+        path: 'Target-Audeince',
         loadChildren: () =>
           import('./categorylist/categorylist.module').then(
             (m) => m.CategorylistModule
@@ -38,7 +38,7 @@ const routes: Routes = [
       },
 
       {
-        path: 'sub-category-list',
+        path: 'Pricing-Strategy',
         loadChildren: () =>
           import('./subcategorylist/subcategorylist.module').then(
             (m) => m.SubcategorylistModule
@@ -52,7 +52,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'add-brand',
+        path: 'ProductGenAi',
         loadChildren: () =>
           import('./addbrand/addbrand.module').then((m) => m.AddbrandModule),
       },
@@ -102,7 +102,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'brand-list',
+        path: 'brand-story',
         loadChildren: () =>
           import('./brandlist/brandlist.module').then((m) => m.BrandlistModule),
       },

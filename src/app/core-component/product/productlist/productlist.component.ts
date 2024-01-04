@@ -106,6 +106,56 @@ export class ProductlistComponent implements OnInit {
      password: ['', Validators.required]
    });
   }
+  get f() {
+    return this.productformValue.controls;    
+  }
+  get s() {
+    return this.sectionTwo.controls;
+  }
+ 
+  get t() {
+    return this.sectionThree.controls;
+  }
+  generateText(string:any) {    
+    this.openaiService.generateText(string).subscribe(
+      (response:any) => {             
+        this.generatedText =  response.choices[0].message.content;      
+        this.message = response.choices[0].message.content;
+        console.log(response.choices[0].message.content);
+        console.log(response.choices[0].text);
+ 
+      },
+      (error:any) => {
+        console.error('Error:', error);
+      }
+    );
+  }
+  exportToCsv() {  
+    const dataForCsv = [{ message: this.message }];
+    this.openaiService.downloadCsv(dataForCsv, 'exported-file');
+  }
+ 
+  nextStep() {
+    this.submitted =true;
+ 
+    if (this.currentStep === 1 && this.productformValue.valid) {
+      this.currentStep++;
+    } else if (this.currentStep === 2 && this.sectionTwo.valid) {
+      this.currentStep++;
+    } else if (this.currentStep === 3 && this.sectionThree.valid) {
+      this.currentStep++;
+    }
+    //  if (this.currentStep < this.totalSteps) {
+    //   this.currentStep++;
+    // }
+   
+  }
+ 
+  prevStep() {
+    if (this.currentStep > 1) {
+      this.currentStep--;
+    }
+  }
 
   ngOnInit(): void {}
 

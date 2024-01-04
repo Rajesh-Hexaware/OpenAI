@@ -11,6 +11,7 @@ export class DataService {
   currentData: any={};
 
 
+  apiKey: string = "c325b83880f66fd5659226a788f5959f";
   constructor(private http: HttpClient) {}
 
   public getCountryList(): Observable<any> {
@@ -133,6 +134,13 @@ export class DataService {
         return res;
       })
     );
+  }
+  public upload(file: any) {
+    const formData = new FormData();
+    formData.append('image', file)
+    return this.http.post<any>('https://api.imgbb.com/1/upload', formData, { params: { key: this.apiKey } }).pipe(map((res: any) => {
+      return res;
+    }));
   }
   public getSupplierList(): Observable<any> {
     return this.http.get('assets/JSON/supplierList.json').pipe(

@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editcategory.component.scss']
 })
 export class EditcategoryComponent implements OnInit {
-
+  showDateTimePicker: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+   
+
+   
+  }
+  toggleDateTimePicker() {
+    // Toggle the value of showDateTimePicker
+    this.showDateTimePicker = !this.showDateTimePicker;
   }
 
 }

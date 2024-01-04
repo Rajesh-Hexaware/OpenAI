@@ -14,9 +14,9 @@ export class SidebarOneComponent implements OnInit {
   page = '';
   public side_bar_data_one: Array<any> = [];
 
-  constructor(private Router: Router, private sidebar: SidebarService) {
-    Router.events.subscribe((event: any) => {
-      if (event instanceof NavigationEnd) {
+  constructor(private Router: Router, private sidebar: SidebarService) {    
+    Router.events.subscribe((event: any) => {      
+      if (event instanceof NavigationEnd) {        
         let splitVal = event.url.split('/');
         this.base = splitVal[1];
         this.page = splitVal[2];

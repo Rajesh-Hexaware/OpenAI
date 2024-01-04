@@ -112,25 +112,25 @@ export class routes {
   // core pages child routes
 
   public static get productList(): string {
-    return this.product + '/product-list';
+    return this.product + '/Indusrty';
   }
   public static get addProduct(): string {
-    return this.product + '/add-product';
+    return this.product + '/Product-Differentiation';
   }
   public static get categoryList(): string {
-    return this.product + '/category-list';
+    return this.product + '/Target-Audeince';
   }
   public static get addCategory(): string {
     return this.product + '/add-category';
   }
   public static get subCategoryList(): string {
-    return this.product + '/sub-category-list';
+    return this.product + '/Pricing-Strategy';
   }
   public static get addSubcategory(): string {
     return this.product + '/sub-add-category';
   }
   public static get addBrand(): string {
-    return this.product + '/add-brand';
+    return this.product + '/ProductGenAi';
   }
   public static get importProduct(): string {
     return this.product + '/import-product';
@@ -154,7 +154,7 @@ export class routes {
     return this.product + '/product-details';
   }
   public static get brandList(): string {
-    return this.product + '/brand-list';
+    return this.product + '/brand-story';
   }
   public static get salesList(): string {
     return this.sales + '/sales-list';
